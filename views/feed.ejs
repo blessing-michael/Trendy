@@ -1,0 +1,40 @@
+<!-- <% posts.forEach(post => { %>
+  <div>
+    <img src="<%= post.image %>" width="200" />
+    <p><%= post.text %></p>
+
+    <p>
+      <%= post.members.length %> / <%= post.groupSize %> joined
+    </p>
+
+    <% if (post.members.length < post.groupSize) { %>
+      <form action="/join/<%= post._id %>" method="POST">
+        <button>Join Group</button>
+      </form>
+    <% } else { %>
+      <p>Group Complete</p>
+    <% } %>
+
+    <a href="/chat/<%= post._id %>">Open Chat</a>
+  </div>
+<% }) %> -->
+<% posts.forEach(post => { %>
+  <div>
+    <img src="<%= post.image %>" width="200" />
+    <p><%= post.text %></p>
+
+    <p>
+      <%= post.members.length %> / <%= post.groupSize %> joined
+    </p>
+
+    <% if (post.members.length < post.groupSize) { %>
+      <form action="/join/<%= post._id %>" method="POST">
+        <button>Join Group</button>
+      </form>
+    <% } else { %>
+      <p>Group Complete</p>
+    <% } %>
+
+    <a href="/chat/<%= post._id %>">Open Chat</a>
+  </div>
+<% }) %>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+ <link rel="stylesheet" href="css/feed.css">
+<div class="checkout-container">
+
+  <!-- LEFT: FORM -->
+  <div class="left">
+    <h2>Checkout Details</h2>
+
+    <form action="/checkout" method="POST">
+
+      <input type="text" name="fullname" placeholder="Full Name" required>
+
+      <input type="text" name="phone" placeholder="Phone Number" required>
+
+      <input type="text" name="address" placeholder="Address" required>
+
+      <input type="text" name="city" placeholder="City" required>
+
+      <textarea name="notes" placeholder="Order notes (optional)"></textarea>
+
+      <button type="submit">Place Order</button>
+
+    </form>
+  </div>
+
+  <!-- RIGHT: ORDER SUMMARY -->
+<!-- RIGHT: ORDER SUMMARY -->
+<div class="right">
+  <h2>Order Summary</h2>
+
+  <% cart.forEach(item => { %>
+
+    <div class="item" style="margin-bottom:15px; padding-bottom:10px; border-bottom:1px solid #eee;">
+
+      <!-- IMAGE -->
+      <div style="display:flex; gap:10px; align-items:center;">
+
+        <img 
+          src="<%= item.productId.image || (item.productId.images ? item.productId.images[0] : '') %>" 
+          style="width:50px;height:60px;object-fit:cover;border-radius:8px;"
+        >
+
+        <div>
+
+          <strong><%= item.productId.name %></strong><br>
+
+          <small>Qty: <%= item.quantity %></small><br>
+
+          <% if(item.size){ %>
+            <small>Size: <%= item.size %></small><br>
+          <% } %>
+
+          <% if(item.color){ %>
+            <small>Color: <%= item.color %></small><br>
+          <% } %>
+
+          <% if(item.isGroupBuy){ %>
+            <small style="color:red;">🔥 Group Buy</small><br>
+          <% } %>
+
+        </div>
+
+      </div>
+
+      <!-- PRICE -->
+      <div style="text-align:right; font-weight:bold; margin-top:5px;">
+        ₦<%= item.productId.price * item.quantity %>
+      </div>
+
+    </div>
+
+  <% }) %>
+
+  <div class="total">
+    Total: ₦<%= total %>
+  </div>
+</div>
+
+</div>
+
+</body>
+</html>

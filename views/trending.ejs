@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trending Products</title>
+
+  <link rel="stylesheet" href="/css/trendy.css">
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<section class="trending-page">
+
+  <div class="page-header">
+    <h1>🔥 Trending Products</h1>
+  </div>
+
+  <div class="products-grid">
+
+<% products.forEach(product => { %>
+
+  <a href="/product/<%= product._id %>" class="product-link">
+
+    <div class="product-card">
+
+      <% if(product.type === "video"){ %>
+
+        <video autoplay muted loop playsinline>
+          <source src="<%= product.video %>" type="video/mp4">
+        </video>
+
+      <% } else { %>
+
+        <img src="<%= product.image %>" alt="<%= product.name %>">
+
+      <% } %>
+
+      <div class="product-info">
+
+        <h3><%= product.name %></h3>
+
+        <div class="price-row">
+
+          <p>₦<%= product.price.toLocaleString() %></p>
+
+          <!-- ADD TO CART -->
+         <button
+  class="cart-btn"
+  onclick="event.preventDefault(); addToCart('<%= product._id %>')"
+>
+  <i class="fa-solid fa-cart-arrow-down"></i>
+</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </a>
+
+<% }) %>
+  </div>
+
+</section>
+<script>
+  async function addToCart(productId) {
+
+    try {
+
+      const res = await fetch("/cart/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          productId,
+          quantity: 1
+        })
+      });
+
+      // if user not logged in
+      if (res.redirected) {
+        window.location.href = res.url;
+        return;
+      }
+
+      // success
+      window.location.href = "/cart";
+
+    } catch (err) {
+
+      console.log(err);
+      alert("Failed to add to cart");
+
+    }
+  }
+</script>
+
+</body>
+</html>

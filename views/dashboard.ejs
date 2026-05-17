@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/vendors.min.css" />
     <link rel="stylesheet" href="/css/icon.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/feed.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
     <link rel="stylesheet" href="/demos/fashion-store/fashion-store.css" />
     <!-- Font Awesome 6 (latest) -->
@@ -32,17 +33,14 @@
 <body data-mobile-nav-style="classic">
     <!-- start header -->
     <header class="header-with-topbar">
-        <!-- start header top bar -->
-        <!-- start header -->
-        <header class="header-with-topbar">
-            <!-- start header top bar -->
+     
             <div
                 class="header-top-bar top-bar-light bg-black disable-fixed md-border-bottom border-color-transparent-dark-very-light">
                 <div class="container-fluid">
                     <div class="row h-40px align-items-center m-0">
                         <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
-                            <div class="text-green">Enjoy FREE standard delivery on orders
-                                over ₦50,000 nationwide.</div>
+                            <div class="text-green">Enjoy FAST delivery on all orders
+                                nationwide.</div>
                             <a href="#" class="text-green fw-600 ms-5px text-hover"><span
                                     class="text-decoration-line-bottom">Shop now</span></a>
                         </div>
@@ -56,14 +54,14 @@
                     <div class="col-auto col-xxl-3 col-lg-2 menu-logo">
                         <div class="header-icon d-none d-lg-flex">
                             <div class="widget-text icon alt-font">
-                                <a href="/contact"><i
-                                        class="feather icon-feather-map-pin d-inline-block me-5px"></i><span
+                                <a href="/contact">
+                                        <i class="fa-brands fa-tiktok d-inline-block  me-5px"></i><span
                                         class="d-none d-xxl-inline-block">Find stores</span></a>
                             </div>
                             <div class="widget-text icon alt-font">
-                                <a href="https://www.instagram.com/" target="_blank"><i
-                                        class="feather icon-feather-instagram d-inline-block me-5px"></i><span
-                                        class="d-none d-xxl-inline-block">100k Followers</span></a>
+                                <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="fa-brands fa-instagram d-inline-block me-5px"></i><span
+                                        class="d-none d-xxl-inline-block">Follow us</span></a>
                             </div>
                         </div>
                         <a class="navbar-brand" href="demo-fashion-store.html">
@@ -91,7 +89,7 @@
                                     <a href="/" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item dropdown submenu">
-                                    <a href="/shop" class="nav-link">Shop</a>
+                                    <a href="/chat" class="nav-link">Chat</a>
                                     <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink1"
                                         role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
                                     <!-- <div class="dropdown-menu submenu-content" aria-labelledby="navbarDropdownMenuLink1">
@@ -283,9 +281,10 @@
                                         <!-- <li><a href="demo-fashion-store-about.html">About</a></li>
                                     <li><a href="demo-fashion-store-faq.html">Faq</a></li>
                                     <li><a href="demo-fashion-store-wishlist.html">Wishlist</a></li> -->
-                                        <li><a href="demo-fashion-store-account.html">Account</a></li>
-                                        <li><a href="/cart">Cart</a></li>
-                                        <li><a href="demo-fashion-store-checkout.html">Checkout</a></li>
+                                        <li><a href="/orders">My orders</a></li>
+                                        <!-- <li><a href="/cart">Cart</a></li> -->
+                                         <li><a href="/cart">Cart</a></li>
+                                        <li><a href="/checkout">Checkout</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -296,7 +295,7 @@
                     </div>
                     <div class="col-auto col-xxl-3 col-lg-2 text-end">
                         <div class="header-icon">
-                            <div class="header-search-icon icon alt-font">
+                            <!-- <div class="header-search-icon icon alt-font">
                                 <a href="javascript:void(0)" class="search-form-icon header-search-form"><i
                                         class="feather icon-feather-search me-5px"></i><span
                                         class="d-none d-xxl-inline-block">Search</span></a>
@@ -317,7 +316,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="widget-text icon alt-font">
 
                                 <!-- <a href="/register"><i class="feather icon-feather-user d-inline-block me-5px"></i><span
@@ -327,1875 +326,138 @@
                                     <!-- Show when logged in -->
                                     <!-- <a href="/profile"><i class="fas fa-user"></i> Profile</a>
                                     <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a> -->
-                                    <a href="/profile"><i class="fa-solid fa-user"></i> Profile</a>
-                                    <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                                    <a href="/profile"> Profile</a>
+                                    <a href="/logout"> Logout</a>
                                     <% } else { %>
                                         <!-- Show when NOT logged in -->
-                                        <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
-                                        <a href="/register"><i class="fas fa-user-plus"></i> Signup</a>
+                                        <a href="/login"> Login</a>
+                                        <a href="/register">Signup</a>
                                         <% } %>
                             </div>
                             <div class="header-cart-icon icon">
                                 <div class="header-cart dropdown">
-                                    <a href="javascript:void(0);"><i class="feather icon-feather-shopping-bag"></i><span
-                                            class="cart-count alt-font text-white bg-dark-gray">2</span></a>
-                                    <ul class="cart-item-list">
-                                        <li class="cart-item align-items-center">
-                                            <a href="javascript:void(0);" class="alt-font close">×</a>
-                                            <div class="product-image">
-                                                <a href="demo-fashion-store-single-product.html"><img
-                                                        src="https://via.placeholder.com/600x765" class="cart-thumb"
-                                                        alt=""></a>
-                                            </div>
-                                            <div class="product-detail fw-600">
-                                                <a href="demo-fashion-store-single-product.html">Ribbed tank</a>
-                                                <span class="item-ammount fw-400">1 x $23.00</span>
-                                            </div>
-                                        </li>
-                                        <li class="cart-item align-items-center">
-                                            <a href="javascript:void(0);" class="alt-font close">×</a>
-                                            <div class="product-image">
-                                                <a href="demo-fashion-store-single-product.html"><img
-                                                        src="https://via.placeholder.com/600x765" class="cart-thumb"
-                                                        alt=""></a>
-                                            </div>
-                                            <div class="product-detail fw-600">
-                                                <a href="demo-fashion-store-single-product.html">Pleated dress</a>
-                                                <span class="item-ammount fw-400">2 x $15.00</span>
-                                            </div>
-                                        </li>
-                                        <li class="cart-total">
-                                            <div class="fs-18 alt-font mb-15px"><span
-                                                    class="w-50 fw-500 text-start">Subtotal:</span><span
-                                                    class="w-50 text-end fw-700">$199.99</span></div>
-                                            <a href="demo-fashion-store-cart.html"
-                                                class="btn btn-large btn-transparent-light-gray border-color-extra-medium-gray">View
-                                                cart</a>
-                                            <a href="demo-fashion-store-checkout.html"
-                                                class="btn btn-large btn-dark-gray btn-box-shadow">Checkout</a>
-                                        </li>
-                                    </ul>
+                                    <a href="/cart">
+  <i class="fa-solid fa-cart-shopping"></i>
+
+  <span class="cart-count alt-font text-white bg-dark-gray">
+    <%= cartCount %>
+  </span>
+</a>
+                                            <!-- <i class="feather icon-feather-shopping-bag"></i>  -->
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
-        </header>
+         </header> 
+         <!-- helper function -->
+
         <!-- end header -->
-        <!-- start section -->
-        <!-- <section class="p-0">
-        <div class="swiper full-screen top-space-margin md-h-600px sm-h-500px magic-cursor magic-cursor-vertical swiper-number-pagination-progress swiper-number-pagination-progress-vertical"
-            data-slider-options='{ "slidesPerView": 1, "direction": "horizontal", "loop": true, "parallax": true, "speed": 1000, "pagination": { "el": ".swiper-number", "clickable": true }, "autoplay": { "delay": 4000, "disableOnInteraction": false },  "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1199": { "direction": "vertical" }}, "effect": "slide" }'
-            data-swiper-number-pagination-progress="true">
-            <div class="swiper-wrapper"> -->
-        <!-- start slider item -->
-        <!-- <div class="swiper-slide overflow-hidden">
-                    <div class="cover-background position-absolute top-0 start-0 w-100 h-100" data-swiper-parallax="500"
-                        style="background-image:url('https://via.placeholder.com/1920x1060');">
-                        <div class="container h-100 softpink">
-                            <div class="row align-items-center h-100 justify-content-start">
-                                <div
-                                    class="col-md-10 position-relative text-white d-flex flex-column justify-content-center h-100">
-                                    <div data-anime='{ "opacity": [0, 1], "translateY": [50, 0], "easing": "easeOutQuad", "duration": 500, "delay": 300 }'
-                                        class="alt-font text-dark-gray mb-25px fs-20 sm-mb-15px"><span
-                                            class="text-highlight">Discount on selected collection!<span
-                                                class="bg-black h-8px bottom-0px"></span></span></div>
-                                    <div class="alt-font fs-120 xs-fs-95 lh-100 mb-40px text-dark-gray fw-600 transform-origin-right ls-minus-5px sm-mb-25px"
-                                        data-anime='{ "el": "childs", "rotateX": [90, 0], "opacity": [0,1], "staggervalue": 150, "easing": "easeOutQuad" }'>
-                                        <span class="d-block">Little Looks, </span>
-                                        <span class="d-block fw-300">Big Smiles</span>
-                                    </div>
-                                    <div
-                                        data-anime='{ "opacity": [0, 1], "translateY": [100, 0], "easing": "easeOutQuad", "duration": 800, "delay": 400 }'>
-                                        <a href="demo-fashion-store-shop.html"
-                                            class="btn btn-dark-gray btn-box-shadow btn-large">View collection</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-        <!-- end slider item -->
-        <!-- start slider item -->
-        <!-- <div class="swiper-slide overflow-hidden deep-pink">
-                    <div class="cover-background position-absolute top-0 start-0 w-100 h-100" data-swiper-parallax="500"
-                        style="background-image:url('https://via.placeholder.com/1920x1060');">
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100 justify-content-start">
-                                <div
-                                    class="col-md-10 position-relative text-white d-flex flex-column justify-content-center h-100">
-                                    <div data-anime='{ "opacity": [0, 1], "translateY": [50, 0], "easing": "easeOutQuad", "duration": 500, "delay": 300 }'
-                                        class="alt-font text-dark-gray mb-25px fs-20 sm-mb-15px"><span
-                                            class="text-highlight">Discount on selected collection!<span
-                                                class="bg-black h-8px bottom-0px"></span></span></div>
-                                    <div class="alt-font fs-120 xs-fs-95 lh-100 mb-40px text-dark-gray fw-600 transform-origin-right ls-minus-5px sm-mb-25px"
-                                        data-anime='{ "el": "childs", "rotateX": [90, 0], "opacity": [0,1], "staggervalue": 150, "easing": "easeOutQuad" }'>
-                                        <span class="d-block">Tiny Threads</span>
-                                        <span class="d-block fw-300">Big Love</span>
-                                    </div>
-                                    <div
-                                        data-anime='{ "opacity": [0, 1], "translateY": [100, 0], "easing": "easeOutQuad", "duration": 800, "delay": 400 }'>
-                                        <a href="demo-fashion-store-shop.html"
-                                            class="btn btn-dark-gray btn-box-shadow btn-large">View collection</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-        <!-- end slider item -->
-        <!-- start slider item -->
-        <!-- <div class="swiper-slide overflow-hidden deeper-pink">
-                    <div class="cover-background position-absolute top-0 start-0 w-100 h-100" data-swiper-parallax="500"
-                        style="background-image:url('https://via.placeholder.com/1920x1060');">
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100 justify-content-start">
-                                <div
-                                    class="col-md-10 position-relative text-white d-flex flex-column justify-content-center h-100">
-                                    <div data-anime='{ "opacity": [0, 1], "translateY": [50, 0], "easing": "easeOutQuad", "duration": 500, "delay": 300 }'
-                                        class="alt-font text-dark-gray mb-25px fs-20 sm-mb-15px"><span
-                                            class="text-highlight">Discount on selected collection!<span
-                                                class="bg-black h-8px bottom-0px"></span></span></div>
-                                    <div class="alt-font fs-120 xs-fs-95 lh-100 mb-40px text-dark-gray fw-600 transform-origin-right ls-minus-5px sm-mb-25px"
-                                        data-anime='{ "el": "childs", "rotateX": [90, 0], "opacity": [0,1], "staggervalue": 150, "easing": "easeOutQuad" }'>
-                                        <span class="d-block">Children's</span>
-                                        <span class="d-block fw-300">collection</span>
-                                    </div>
-                                    <div
-                                        data-anime='{ "opacity": [0, 1], "translateY": [100, 0], "easing": "easeOutQuad", "duration": 800, "delay": 400 }'>
-                                        <a href="demo-fashion-store-shop.html"
-                                            class="btn btn-dark-gray btn-box-shadow btn-large">View collection</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-        <!-- end slider item -->
-        <!-- </div> -->
-        <!-- start slider pagination -->
-        <!-- <div class="swiper-pagination-wrapper">
-                <div class="pagination-progress-vertical d-flex align-items-center justify-content-center">
-                    <div class="number-prev text-dark-gray fs-16 fw-500"></div>
-                    <div class="swiper-pagination-progress">
-                        <span class="swiper-progress"></span>
-                    </div>
-                    <div class="number-next text-dark-gray fs-16 fw-500"></div>
-                </div>
-            </div> -->
-        <!-- end slider pagination -->
-        <!-- </div>
-    </section> -->
-        <!-- end section -->
-        <!-- start section -->
-        <section class="pt-0 pb-0 ps-7 pe-7 lg-ps-3 lg-pe-3 xs-p-0 extra-margin">
-            <div class="container-fluid">
-                <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-2 row-cols-md-2"
-                    data-anime='{ "el": "childs", "translateY": [-15, 0], "perspective": [1200,1200], "scale": [1.1, 1], "rotateX": [50, 0], "opacity": [0,1], "duration": 400, "delay": 100, "staggervalue": 200, "easing": "easeOutQuad" }'>
-                    <!-- start categories style -->
-                    <div class="col categories-style-02 lg-mb-30px mb-25px">
-                        <div class="categories-box">
-                            <a href="/chandelier">
-                                <img class="sm-w-100" src="images/ring-chan-black.jpg" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="/chandelier"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Light"> Chandelier</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02 lg-mb-30px">
-                        <div class="categories-box">
-                            <a href="/women">
-                                <img class="sm-w-100" src="images/dress-model-black2.png" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                9 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="/women"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Female">Women's clothing</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02 sm-mb-30px">
-                        <div class="categories-box">
-                            <a href="/wallstickers">
-                                <img class="sm-w-100" src="images/wall-decor2.jpg" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="/wallstickers"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="frameless">Wall stickers</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02">
-                        <div class="categories-box">
-                            <a href="/babies">
-                                <img class="sm-w-100" src="images/model-800x800-letterbox.jpg" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="/babies"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Kids">Baby wears</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02">
-                        <div class="categories-box">
-                            <a href="/men">
-                                <img class="sm-w-100" src="images/men-1-1.png" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="/men"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Men">Men's clothing</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02">
-                        <div class="categories-box">
-                            <a href="/airport-wears">
-                                <img class="sm-w-100" src="images/female-12.jpg" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="airport-wears"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Suit">Airport wears</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02">
-                        <div class="categories-box">
-                            <a href="/accessories">
-                                <img class="sm-w-100" src="images/cap.jpg" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="/accessories"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Accessories">Accessories</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                    <!-- start categories style -->
-                    <div class="col categories-style-02">
-                        <div class="categories-box">
-                            <a href="baby-toys">
-                                <img class="sm-w-100" src="images/toy-1-1-1.png" alt="" />
-                            </a>
-                            <div
-                                class="border-color-transparent-dark-very-light border alt-font fw-500 text-dark-gray text-uppercase ps-15px pe-15px fs-11 lh-26 border-radius-100px d-inline-block position-absolute right-20px top-20px">
-                                8 items</div>
-                            <div class="absolute-bottom-center bottom-40px md-bottom-25px">
-                                <a href="baby-toys"
-                                    class="btn btn-white btn-switch-text btn-round-edge btn-box-shadow fs-18 text-uppercase-inherit p-5 min-w-150px">
-                                    <span class="text-nowrap">
-                                        <span class="btn-double-text ls-0px" data-text="Toys">Baby Toys</span>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end categories style -->
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start section -->
-        <section class="half-section">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-xl-4 row-cols-lg-4 row-cols-md-2 row-cols-sm-2"
-                    data-anime='{ "el": "childs", "translateX": [30, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <!-- start features box item -->
-                    <div class="col icon-with-text-style-01 md-mb-35px">
-                        <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
-                            <div class="feature-box-icon me-20px">
-                                <i class="line-icon-Box-Close icon-large text-dark-gray"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Free shipping</span>
-                                <p class="fs-16 lh-24">Free shipping on all <span class="name-logo">₦50,000
-                                        order</span> nationwide
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end features box item -->
-                    <!-- start features box item -->
-                    <div class="col icon-with-text-style-01 md-mb-35px">
-                        <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
-                            <div class="feature-box-icon me-20px">
-                                <i class="line-icon-Reload-3 icon-large text-dark-gray"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Get value</span>
-                                <p class="fs-16 lh-24">for your Moneyback</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end features box item -->
-                    <!-- start features box item -->
-                    <div class="col icon-with-text-style-01 xs-mb-35px">
-                        <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
-                            <div class="feature-box-icon me-20px">
-                                <i class="line-icon-Credit-Card2 icon-large text-dark-gray"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Secure payment</span>
-                                <p class="fs-16 lh-24">100% protected payment</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end features box item -->
-                    <!-- start features box item -->
-                    <div class="col icon-with-text-style-01">
-                        <div class="feature-box feature-box-left-icon-middle last-paragraph-no-margin">
-                            <div class="feature-box-icon me-20px">
-                                <i class="line-icon-Phone-2 icon-large text-dark-gray"></i>
-                            </div>
-                            <div class="feature-box-content">
-                                <span class="alt-font fs-20 fw-500 d-block text-dark-gray">Online support</span>
-                                <p class="fs-16 lh-24">24/7 days a week support</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end features box item -->
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
+       
         <!-- start section -->
         <!-- here was casuals, men,women -->
         <!-- end section -->
         <!-- start section -->
-        <section class="ps-7 pe-7 pb-3 lg-ps-3 lg-pe-3 sm-pb-6 xs-px-0">
-            <div class="container">
-                <div class="row mb-5 xs-mb-8">
-                    <div class="col-12 text-center">
-                        <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Best seller <span
-                                class="text-highlight fw-600">products<span
-                                    class="bg-base-color h-5px bottom-2px"></span></span></h2>
+       <section class="trending" id="trendingSection">
+
+  <div class="trending-header">
+    <h3>🔥 Trending Sets</h3>
+
+    <a href="/trending" class="view-all-btn">
+      View All →
+    </a>
+  </div>
+
+  <div class="slider-container">
+    <button class="nav prev">&#10094;</button>
+
+    <div class="slider" id="slider"></div>
+
+    <button class="nav next">&#10095;</button>
+  </div>
+  
+
+</section>
+
+  <section class="group-section">
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="section-header">
+            <h2> Group Buy Deals</h2>
+            <p>Join others and unlock cheaper prices</p>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="product-grid">
+
+            <% products.forEach(product => { %>
+
+                <div class="product-card">
+
+                    <!-- BADGE -->
+                    <div class="badge">Group Buy</div>
+
+                    <!-- IMAGE -->
+                    
+                    <div class="product-image">
+    <a href="/product/<%= product._id %>">
+        <img src="<%= product.image %>" alt="<%= product.name %>">
+    </a>
+</div>
+
+                    <!-- INFO -->
+                    <div class="product-info">
+
+                        <!-- NAME -->
+                        <h3 class="product-name">
+                            <%= product.name %>
+                        </h3>
+
+                        <!-- PRICE -->
+                      <!-- PRICE + CART ROW -->
+<div class="price-row">
+
+    <div class="product-price">
+        ₦<%= product.price %>
+    </div>
+
+ <button 
+  class="cart-btn"
+  onclick="addToCart('<%= product._id %>')"
+>
+  <i class="fa-solid fa-cart-arrow-down"></i>
+</button>
+
+</div>
+
+                        <!-- HINT (optional) -->
+                        <!-- <div class="mini-info">
+                            Tap to choose size & join deal
+                        </div> -->
+
                     </div>
+
                 </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="shop-modern shop-wrapper grid-loading grid grid-5col lg-grid-4col md-grid-3col sm-grid-2col xs-grid-1col gutter-extra-large text-center"
-                            data-anime='{ "el": "childs", "translateY": [-15, 0], "opacity": [0,1], "duration": 300, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'>
-                            <li class="grid-sizer"></li>
-                            <!-- start shop item -->
-                            <li class="grid-item">
 
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="/B100">
-                                            <img src="images/baby-1.jpg" alt="">
-                                            <span class="lable new">New</span>
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
+            <% }) %>
 
-                                            <a href="/B100"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="/B100" class="alt-font text-dark-gray fs-19 fw-500">B100</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>₦20,000</del>₦14,935</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="B103">
-                                            <img src="images/baby-4.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="B103"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-
-                                                <!-- <% if (products && products.length> 0) { %>
-                                                    <% products.forEach(product=> { %>
-                                                        <div class="product-card">
-                                                            <h2>
-                                                                <%= product.name %>
-                                                            </h2>
-                                                            <p>₦<%= product.price %>
-                                                            </p>
-                                                            <form action="/cart/add/<%= product._id %>" method="POST">
-                                                                <button type="submit">Add to Cart</button>
-                                                            </form>
-                                                        </div>
-                                                        <% }) %>
-                                                            <% } else { %>
-                                                                <p>No products found.</p>
-                                                                <% } %> -->
-
-
-
-                                                <!-- <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span> -->
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="/B103" class="alt-font text-dark-gray fs-19 fw-500">B103</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>₦21,000</del>₦16,600</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="/B101">
-                                            <img src="images/baby-10.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <!-- <a href="/B101" -->
-                                            <a href="#" class="add-to-cart" data-id="B100"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="/B101"
-                                            class="alt-font text-dark-gray fs-19 fw-500 text-nowrap">B101</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$40,050.00</del>₦25,999</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-3.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Skinny trousers</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$300.00</del>$259.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="/B104">
-                                            <img src="images/baby-9.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="/B104"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="/B104" class="alt-font text-dark-gray fs-19 fw-500">B104</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>₦18,000</del>$₦15,100</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-5.jpg" alt="">
-                                            <span class="lable hot">Hot</span>
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text cart-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Pocket sweatshirt</a>
-                                        <div class="price lh-22 fs-16"><del>$200.00</del>$189.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-4.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text ">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Wooden board</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$150.00</del>$129.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <!-- <video src="images/torch-toy.mp4" autoplay muted loop height="250"></video> -->
-                                            <img src="images/female-1.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Texture regular</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$170.00</del>$120.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-1.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text">Add to cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Sequined dress</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$190.00</del>$150.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <!-- <video src="images/lovelywooden_toy_7173325702861720837.mp4" autoplay muted loop
-                                            height="250"></video> -->
-                                            <img src="images/female-1.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-9.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-7.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-13.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="/B114">
-                                            <!-- <video src="images/lovelywooden_toy_7173325702861720837.mp4" autoplay muted loop
-                                            height="250"></video> -->
-                                            <img src="images/baby-19.jpg" alt="">
-                                            <!-- <img src="images/female-1.jpg" alt=""> -->
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="/B114"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="/B114" class="alt-font text-dark-gray fs-19 fw-500">B114</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>₦26,000.00</del>₦20,999.00</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-12.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-12.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-12.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-12.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-12.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item">
-                                <div class="shop-box mb-10px">
-                                    <div class="shop-image mb-20px">
-                                        <a href="demo-fashion-store-single-product.html">
-                                            <img src="images/female-12.jpg" alt="">
-                                            <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                        </a>
-                                        <div class="shop-buttons-wrap">
-                                            <a href="demo-fashion-store-single-product.html"
-                                                class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                                                <i class="feather icon-feather-shopping-bag"></i><span
-                                                    class="quick-view-text button-text add-to-cart-text">Add to
-                                                    cart</span>
-                                            </a>
-                                        </div>
-                                        <div class="shop-hover d-flex justify-content-center">
-                                            <ul>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Add to wishlist"><i
-                                                            class="feather icon-feather-heart fs-16"></i></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"
-                                                        class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                                        data-bs-toggle="tooltip" data-bs-placement="left"
-                                                        title="Quick shop"><i
-                                                            class="feather icon-feather-eye fs-16"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="shop-footer text-center">
-                                        <a href="demo-fashion-store-single-product.html"
-                                            class="alt-font text-dark-gray fs-19 fw-500">Bermuda shorts</a>
-                                        <div class="price lh-22 fs-16 name-logo "><del>$120.00</del>$100.00</div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- end shop item -->
-
-
-
-
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start section -->
-        <!-- <section class="p-15px bg-dark-gray text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <span class="fs-15 text-uppercase fw-500">Take an extra 25% discount our favorite dress style. Use
-                        code:<span
-                            class="fs-14 fw-700 lh-28 alt-font text-dark-gray text-uppercase bg-base-color d-inline-block border-radius-30px ps-15px pe-15px ms-5px align-middle">fw205</span></span>
-                </div>
-            </div>
         </div>
-    </section> -->
-        <!-- end section -->
-        <!-- start section -->
-        <!-- <section class="bg-very-light-gray overflow-hidden position-relative ps-3 xs-ps-0">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-3 ps-5 pe-5 xl-pe-0 lg-ps-0 text-center text-lg-start md-mb-40px">
-                    <div class="mb-10px"><span class="text-dark-gray fw-500 text-highlight">Lookbook 2023<span
-                                class="bg-base-color h-8px bottom-0px"></span></span></div>
-                    <h2 class="alt-font lh-50 text-dark-gray ls-minus-1px mb-15px">New arrival <span
-                            class="fw-600">collection</span></h2>
-                    <p class="xs-pe-15px xs-ps-15px">Flash summer sale 70% off on selected collection for him.</p>
-                    <a href="demo-fashion-store-shop.html" class="btn btn-dark-gray btn-box-shadow btn-medium">View
-                        collection</a> -->
 
-        <!-- NOTE THIS COMMENT CAME ALREAADY COMMENTED INCASE YOU NEED TO UNDO THIS SECTION -->
-        <!--<div class="d-flex mt-30px justify-content-center justify-content-lg-start">
-                             start slider navigation 
-                            <div class="slider-one-slide-prev-1 icon-small text-dark-gray swiper-button-prev slider-navigation-style-04 bg-white box-shadow-large"><i class="fa-solid fa-arrow-left"></i></div>
-                            <div class="slider-one-slide-next-1 icon-small text-dark-gray swiper-button-next slider-navigation-style-04 bg-white box-shadow-large"><i class="fa-solid fa-arrow-right"></i></div> 
-                             end slider navigation 
-                        </div>-->
-        <!-- END OF NOTE THIS COMMENT CAME ALREAADY COMMENTED INCASE YOU NEED TO UNDO THIS SECTION -->
-        <!-- </div>
-                <div class="col-12 col-lg-9 position-relative">
-                    <div
-                        class="outside-box-right-10 lg-outside-box-right-20 md-outside-box-right-25 xs-outside-box-right-0">
-                        <div class="swiper slider-three-slide"
-                            data-slider-options='{ "slidesPerView": 1, "spaceBetween": 30, "loop": true, "autoplay": { "delay": 4000, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-one-slide-next-1", "prevEl": ".slider-one-slide-prev-1" }, "pagination": { "el": ".slider-four-slide-pagination-1", "clickable": true, "dynamicBullets": false }, "keyboard": { "enabled": true, "onlyInViewport": true }, "breakpoints": { "1400": { "slidesPerView": 4 }, "1024": { "slidesPerView": 3 }, "768": { "slidesPerView": 3 }, "576": { "slidesPerView": 2 }, "320": { "slidesPerView": 1 } }, "effect": "slide" }'>
-                            <div class="swiper-wrapper"> -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Ethnic wear</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Outfits
-                                                    matching</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Dress materials</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Explore
-                                                    a variety</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Western wear</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Traditional
-                                                    attires</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Loungewear</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Women
-                                                    branded</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Ethnic wear</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Outfits
-                                                    matching</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Dress materials</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Explore
-                                                    a variety</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Western wear</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Traditional
-                                                    attires</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- start content carousal item -->
-        <!-- <div class="swiper-slide">
-                                    <div
-                                        class="interactive-banner-style-09 border-radius-6px overflow-hidden position-relative">
-                                        <img src="https://via.placeholder.com/600x730" alt="" />
-                                        <div class="opacity-full bg-gradient-gray-light-dark-transparent"></div>
-                                        <div
-                                            class="image-content h-100 w-100 ps-15 pe-15 pt-11 pb-11 lg-p-11 d-flex justify-content-bottom align-items-start flex-column">
-                                            <div
-                                                class="mt-auto d-flex align-items-start w-100 z-index-1 position-relative overflow-hidden flex-column">
-                                                <span class="text-white fw-500 fs-22">Loungewear</span>
-                                                <span
-                                                    class="content-title text-white fs-14 fw-500 opacity-7 text-uppercase ls-05px">Women
-                                                    branded</span>
-                                                <a href="demo-fashion-store-shop.html"
-                                                    class="content-title-hover fs-14 lh-24 fw-500 ls-05px text-uppercase text-white opacity-6 text-decoration-line-bottom">Explore
-                                                    collection</a>
-                                                <span
-                                                    class="content-arrow lh-50 rounded-circle bg-base-color w-50px h-50px ms-20px text-center"><i
-                                                        class="bi bi-arrow-right-short text-dark-gray icon-very-medium"></i></span>
-                                            </div>
-                                            <div
-                                                class="position-absolute left-0px top-0px w-100 h-100 bg-gradient-regal-blue-transparent opacity-9">
-                                            </div>
-                                            <div class="box-overlay bg-gradient-gray-light-dark-transparent"></div>
-                                            <a href="demo-fashion-store-shop.html"
-                                                class="position-absolute z-index-1 top-0px left-0px h-100 w-100"></a>
-                                        </div>
-                                    </div>
-                                </div> -->
-        <!-- end content carousal item -->
-        <!-- </div>
-                        </div>
-                    </div> -->
-        <!-- start slider pagination -->
-        <!--<div class="swiper-pagination slider-four-slide-pagination-1 swiper-pagination-style-2 swiper-pagination-clickable swiper-pagination-bullets"></div>-->
-        <!-- end slider pagination -->
-        <!-- </div>
-            </div>
-        </div>
-        <div class="fs-180 lg-fs-150 md-fs-130 fw-700 position-absolute bottom-minus-50px md-bottom-minus-40px ls-minus-5px left-0px right-0px text-center w-100 opacity-1 d-none d-md-block"
-            data-bottom-top="transform:scale(1, 1) translate3d(0px, 0px, 0px);"
-            data-top-bottom="transform:scale(1, 1) translate3d(-100px, 0px, 0px);">new collection</div>
-    </section> -->
-        <!-- end section -->
-        <!-- start section -->
-        <!-- <section class="half-section border-bottom border-color-extra-medium-gray">
-        <div class="container">
-            <div class="row row-cols-2 row-cols-md-5 row-cols-sm-3 position-relative justify-content-center"
-                data-anime='{ "el": "childs", "translateY": [-15, 0], "scale": [0.8, 1], "opacity": [0,1], "duration": 300, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'> -->
-        <!-- start client item -->
-        <!-- <div class="col text-center sm-mb-30px">
-                    <a href="#"><img src="images/logo-asos.svg" class="h-30px" alt="" /></a>
-                </div> -->
-        <!-- end client item -->
-        <!-- start client item -->
-        <!-- <div class="col text-center sm-mb-30px">
-                    <a href="#"><img src="images/logo-chanel.svg" class="h-30px" alt="" /></a>
-                </div> -->
-        <!-- end client item -->
-        <!-- start client item -->
-        <!-- <div class="col text-center sm-mb-30px">
-                    <a href="#"><img src="images/logo-gucci.svg" class="h-30px" alt="" /></a>
-                </div> -->
-        <!-- end client item -->
-        <!-- start client item -->
-        <!-- <div class="col text-center xs-mb-30px">
-                    <a href="#"><img src="images/logo-celine.svg" class="h-30px" alt="" /></a>
-                </div> -->
-        <!-- end client item -->
-        <!-- start client item -->
-        <!-- <div class="col text-center">
-                    <a href="#"><img src="images/logo-adidas.svg" class="h-30px" alt="" /></a>
-                </div> -->
-        <!-- end client item -->
-        <!-- </div>
-        </div>
-    </section> -->
-        <!-- end section -->
-        <!-- start section -->
-        <!-- <section class="ps-7 pe-7 pb-3 lg-ps-3 lg-pe-3 md-pb-5 xs-px-0">
-        <div class="container">
-            <div class="row mb-5 xs-mb-8">
-                <div class="col-12 text-center">
-                    <h2 class="alt-font text-dark-gray mb-0 ls-minus-2px">Featured <span
-                            class="text-highlight fw-600">products<span
-                                class="bg-base-color h-5px bottom-2px"></span></span></h2>
-                </div>
-            </div>
-        </div> -->
-        <!-- <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <ul class="shop-modern shop-wrapper grid-loading grid grid-5col lg-grid-3col sm-grid-2col xs-grid-1col gutter-extra-large text-center"
-                        data-anime='{ "el": "childs", "translateY": [-15, 0], "opacity": [0,1], "duration": 300, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'>
-                        <li class="grid-sizer"></li> -->
-        <!-- start shop item -->
-        <!-- <li class="grid-item">
-        <div class="shop-box mb-10px">
-            <div class="shop-image mb-20px">
-                <a href="demo-fashion-store-single-product.html">
-                    <img src="https://via.placeholder.com/600x765" alt="">
-                    <span class="lable new">New</span>
-                    <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                </a>
-                <div class="shop-buttons-wrap">
-                    <a href="demo-fashion-store-single-product.html"
-                        class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                        <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add
-                            to cart</span>
-                    </a>
-                </div>
-                <div class="shop-hover d-flex justify-content-center">
-                    <ul>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i
-                                    class="feather icon-feather-heart fs-16"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                    class="feather icon-feather-eye fs-16"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="shop-footer text-center">
-                <a href="demo-fashion-store-single-product.html" class="alt-font text-dark-gray fs-19 fw-500">Textured
-                    sweater</a>
-                <div class="price lh-22 fs-16 name-logo"><del>$200.00</del>$189.00</div>
-            </div>
-        </div>
-    </li> -->
-        <!-- end shop item -->
-        <!-- start shop item -->
-        <!-- <li class="grid-item">
-        <div class="shop-box mb-10px">
-            <div class="shop-image mb-20px">
-                <a href="demo-fashion-store-single-product.html">
-                    <img src="https://via.placeholder.com/600x765" alt="">
-                    <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                </a>
-                <div class="shop-buttons-wrap">
-                    <a href="demo-fashion-store-single-product.html"
-                        class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                        <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add
-                            to cart</span>
-                    </a>
-                </div>
-                <div class="shop-hover d-flex justify-content-center">
-                    <ul>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i
-                                    class="feather icon-feather-heart fs-16"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                    class="feather icon-feather-eye fs-16"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="shop-footer text-center">
-                <a href="demo-fashion-store-single-product.html" class="alt-font text-dark-gray fs-19 fw-500">Traveller
-                    shirt</a>
-                <div class="price lh-22 fs-16 name-logo "><del>$350.00</del>$289.00</div>
-            </div>
-        </div>
-    </li> -->
-        <!-- end shop item -->
-        <!-- start shop item -->
-        <!-- <li class="grid-item">
-        <div class="shop-box mb-10px">
-            <div class="shop-image mb-20px">
-                <a href="demo-fashion-store-single-product.html">
-                    <img src="https://via.placeholder.com/600x765" alt="">
-                    <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                </a>
-                <div class="shop-buttons-wrap">
-                    <a href="demo-fashion-store-single-product.html"
-                        class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                        <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add
-                            to cart</span>
-                    </a>
-                </div>
-                <div class="shop-hover d-flex justify-content-center">
-                    <ul>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i
-                                    class="feather icon-feather-heart fs-16"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                    class="feather icon-feather-eye fs-16"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="shop-footer text-center">
-                <a href="demo-fashion-store-single-product.html" class="alt-font text-dark-gray fs-19 fw-500">Crewneck
-                </a>
-                <div class="price lh-22 fs-16"><del>$220.00</del>$199.00</div>
-            </div>
-        </div>
-    </li> -->
-        <!-- end shop item -->
-        <!-- start shop item -->
-        <!-- <li class="grid-item">
-        <div class="shop-box mb-10px">
-            <div class="shop-image mb-20px">
-                <a href="demo-fashion-store-single-product.html">
-                    <img src="https://via.placeholder.com/600x765" alt="">
-                    <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                </a>
-                <div class="shop-buttons-wrap">
-                    <a href="demo-fashion-store-single-product.html"
-                        class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                        <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add
-                            to cart</span>
-                    </a>
-                </div>
-                <div class="shop-hover d-flex justify-content-center">
-                    <ul>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i
-                                    class="feather icon-feather-heart fs-16"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                    class="feather icon-feather-eye fs-16"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="shop-footer text-center">
-                <a href="demo-fashion-store-single-product.html" class="alt-font text-dark-gray fs-19 fw-500">Skinny
-                    trousers</a>
-                <div class="price lh-22 fs-16"><del>$300.00</del>$259.00</div>
-            </div>
-        </div>
-    </li> -->
-        <!-- end shop item -->
-        <!-- start shop item -->
-        <!-- <li class="grid-item">
-        <div class="shop-box mb-10px">
-            <div class="shop-image mb-20px">
-                <a href="demo-fashion-store-single-product.html">
-                    <img src="https://via.placeholder.com/600x765" alt="">
-                    <div class="shop-overlay bg-gradient-gray-light-dark-transparent"></div>
-                </a>
-                <div class="shop-buttons-wrap">
-                    <a href="demo-fashion-store-single-product.html"
-                        class="alt-font btn btn-small btn-box-shadow btn-white btn-round-edge left-icon add-to-cart">
-                        <i class="feather icon-feather-shopping-bag"></i><span class="quick-view-text button-text">Add
-                            to cart</span>
-                    </a>
-                </div>
-                <div class="shop-hover d-flex justify-content-center">
-                    <ul>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i
-                                    class="feather icon-feather-heart fs-16"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="w-40px h-40px bg-white text-dark-gray d-flex align-items-center justify-content-center rounded-circle ms-5px me-5px"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Quick shop"><i
-                                    class="feather icon-feather-eye fs-16"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="shop-footer text-center">
-                <a href="demo-fashion-store-single-product.html" class="alt-font text-dark-gray fs-19 fw-500">Sleeve
-                    sweater</a>
-                <div class="price lh-22 fs-16"><del>$250.00</del>$239.00</div>
-            </div>
-        </div>
-    </li> -->
-        <!-- end shop item -->
-        <!-- </ul>
     </div>
-    </div>
-    </div>
-    </section> -->
+
+</section>
+
+<!-- ===================== -->
+<!-- PRODUCT MODAL -->
+<!-- ===================== -->
+
+
+        <!-- end section -->
+       
         <!-- end section -->
         <!-- start section -->
         <section class="p-0 border-top border-bottom border-color-extra-medium-gray">
@@ -2368,7 +630,7 @@
 
                     <!-- start footer column -->
                     <div class="col-12 col-md-auto sm-mb-15px text-center text-md-start">
-                        <h4 class="name-logo">Baby K</h4>
+                        <h4 class="name-logo">Trendy</h4>
                         <!-- <a href="demo-fashion-store.html" class="footer-logo"><img
                             src="images/demo-fashion-store-logo-white.png"
                             data-at2x="images/demo-fashion-store-logo-white@2x.png" alt="" class="default-logo"></a> -->
@@ -2377,14 +639,14 @@
                     <!-- start footer column -->
                     <div class="col">
                         <ul class="footer-navbar text-center text-md-end">
-                            <li class="nav-item"><a href="demo-fashion-store.html" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="demo-fashion-store-shop.html" class="nav-link">Shop</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
                             <!-- <li class="nav-item"><a href="demo-fashion-store-collection.html"
                                 class="nav-link">Collection</a></li>
                         <li class="nav-item"><a href="demo-fashion-store-magazine.html" class="nav-link">Magazine</a>
                         </li> -->
                             <!-- <li class="nav-item"><a href="demo-fashion-store-about.html" class="nav-link">About</a></li> -->
-                            <li class="nav-item"><a href="demo-fashion-store-contact.html" class="nav-link">Contact</a>
+                            <li class="nav-item"><a href="#" class="nav-link">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -2398,8 +660,8 @@
                     <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
                         <span class="fw-500 d-block text-white mb-5px fs-17">Categories</span>
                         <ul>
-                            <li><a href="demo-fashion-store-shop.html">children</a></li>
-                            <li><a href="demo-fashion-store-shop.html">toys</a>
+                            <li><a href="#">Big sizes</a></li>
+                            <li><a href="#">Small sizes</a>
                         </ul>
                     </div>
                     <!-- end footer column -->
@@ -2407,8 +669,8 @@
                     <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
                         <span class="fw-500 d-block text-white mb-5px fs-17">Information</span>
                         <ul>
-                            <li><a href="demo-fashion-store-about.html">About us</a></li>
-                            <li><a href="demo-fashion-store-contact.html">Contact us</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact us</a></li>
                             <li><a href="#">Terms & conditions</a></li>
                             <li><a href="#">Shipping & delivery</a></li>
                             <li><a href="#">Privacy policy</a></li>
@@ -2419,7 +681,7 @@
                     <div class="col-6 col-lg-2 col-sm-4 xs-mb-30px order-sm-3 order-lg-2">
                         <span class="fw-500 d-block text-white mb-5px fs-17">Quick links</span>
                         <ul>
-                            <li><a href="demo-fashion-store-account.html">My account</a></li>
+                            <li><a href="#">My account</a></li>
                             <!-- <li><a href="#">Orders tracking</a></li> -->
                             <li><a href="#">Our store</a></li>
                             <li><a href="#">Size guide</a></li>
@@ -2431,13 +693,9 @@
                     <div
                         class="col-6 col-lg-3 col-md-4 col-sm-5 md-mb-50px xs-mb-30px order-sm-2 order-lg-2 offset-md-2 offset-lg-0">
                         <span class="fw-500 d-block text-white mb-10px fs-17">Quick contact</span>
-                        <div><i class="feather icon-feather-phone-call fs-16 text-white me-10px xs-me-5px"></i><a
-                                href="tel:1234567890">090 382 96450</a></div>
-                        <div class="mb-15px"><i
-                                class="feather icon-feather-mail fs-16 text-white me-10px xs-me-5px"></i><a
-                                href="mailto:info@domain.com"
-                                class="text-decoration-line-bottom">blessingmike334@gmail.com</a></div>
-                        <span class="fw-500 d-block text-white mb-5px fs-17">Connect with us</span>
+                        
+                        
+                       
                         <div class="elements-social social-icon-style-02">
                             <ul class="light">
                                 <li><a class="facebook" href="https://www.facebook.com/" target="_blank"><i
@@ -2575,28 +833,45 @@
         <script type="text/javascript" src="/js/vendors.min.js"></script>
         <script type="text/javascript" src="/js/main.js"></script>
 
-        <script>
-            document.querySelectorAll(".add-to-cart").forEach(button => {
-                button.addEventListener("click", async (e) => {
-                    e.preventDefault();
-                    const productId = button.dataset.id;
+        <!-- <script></script> -->
 
-                    try {
-                        const response = await fetch(`/cart/add/${productId}`, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" }
-                        });
+<!-- ADD TO CART -->
+<script>
+  async function addToCart(productId) {
 
-                        const data = await response.json();
-                        alert(data.message);
-                    } catch (error) {
-                        console.error(error);
-                        alert("Something went wrong adding the product to cart.");
-                    }
-                });
-            });
-        </script>
+    try {
 
+      const res = await fetch("/cart/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          productId,
+          quantity: 1
+        })
+      });
+
+      // if redirected to login
+      if (res.redirected) {
+        window.location.href = res.url;
+        return;
+      }
+
+      // success
+      window.location.href = "/cart";
+
+    } catch (err) {
+
+      console.log(err);
+      alert("Failed to add to cart");
+
+    }
+  }
+</script>
+
+<!-- SLIDER SCRIPT (ONLY ONCE) -->
+<script src="/slider.js"></script>
 
 </body>
 

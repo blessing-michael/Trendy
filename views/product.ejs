@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %></title>
+
+    <link rel="stylesheet" href="/css/feed.css">
+</head>
+
+<body>
+
+<section class="product-detail">
+
+    <!-- LEFT SIDE -->
+    <div class="gallery-section">
+
+        <div class="main-image-wrapper">
+            <img
+                id="mainImage"
+                src="<%= product.images && product.images.length > 0 ? product.images[0] : product.image %>"
+                alt="<%= product.name %>"
+                class="main-image"
+            >
+        </div>
+
+        <div class="thumbs">
+            <% if(product.images && product.images.length > 0){ %>
+                <% product.images.forEach(img => { %>
+                    <img
+                        src="<%= img %>"
+                        class="thumb-image"
+                        onclick="changeImage(this.src)"
+                    >
+                <% }) %>
+            <% } %>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="info-section">
+
+        <h1 class="product-title"><%= product.name %></h1>
+
+        <p class="product-description"><%= product.description %></p>
+
+        <div class="price-box">
+
+            <div class="single-price">
+                Single Price:
+                <span>₦<%= product.singlePrice || product.price %></span>
+            </div>
+
+            <div class="group-price">
+                Group Buy:
+                <span>₦<%= product.groupPrice || product.price %></span>
+            </div>
+
+        </div>
+
+        <!-- GROUP BUY -->
+        <div class="group-progress-box">
+
+        <% if(group){ %>
+
+            <h3 class="group-title">Group Buy Progress</h3>
+
+            <p class="progress-text">
+                <span id="joinedCount"><%= group.members.length %></span>
+                /
+                <span id="totalCount"><%= product.groupSize %></span>
+                Members Joined
+            </p>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div class="fomo-box">
+
+                <div class="fomo-item">
+                    🔥 <%= product.groupSize - group.members.length %> spots left at this price
+                </div>
+
+                <% if(group.members.length >= product.groupSize - 2){ %>
+                    <div class="fomo-item hot">🔥 Group almost full</div>
+                <% } %>
+
+                <div class="fomo-item live" id="liveText">
+                    🔥 Someone joined 4 mins ago
+                </div>
+
+            </div>
+
+        <% } else { %>
+
+            <div class="fomo-item">🔥 Be the first to join this deal</div>
+
+        <% } %>
+
+        </div>
+
+        <!-- OPTIONS -->
+        <div class="option-group">
+            <label>Select Size</label>
+            <select class="product-select" id="sizeSelect">
+                <option value="">Select Size</option>
+                <% if(product.sizes && product.sizes.length > 0){ %>
+                    <% product.sizes.forEach(size => { %>
+                        <option value="<%= size %>"><%= size %></option>
+                    <% }) %>
+                <% } else { %>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                <% } %>
+            </select>
+        </div>
+
+        <div class="option-group">
+            <label>Select Color</label>
+            <select class="product-select" id="colorSelect">
+                <option value="">Select Color</option>
+                <% if(product.colors && product.colors.length > 0){ %>
+                    <% product.colors.forEach(color => { %>
+                        <option value="<%= color %>"><%= color %></option>
+                    <% }) %>
+                <% } else { %>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                <% } %>
+            </select>
+        </div>
+
+        <!-- QUANTITY -->
+        <div class="quantity-wrapper">
+            <label>Quantity</label>
+
+            <div class="qty-box">
+                <button type="button" onclick="decreaseQty()">-</button>
+
+                <input type="text" id="qty" value="1" readonly>
+
+                <button type="button" onclick="increaseQty()">+</button>
+            </div>
+        </div>
+
+        <!-- ADD TO CART -->
+        <form action="/cart/add" method="POST" class="cartForm">
+
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <input type="hidden" name="quantity" id="cartQty" value="1">
+
+            <input type="hidden" name="size" class="selectedSize">
+            <input type="hidden" name="color" class="selectedColor">
+
+            <button class="add-cart-btn">Add To Cart</button>
+
+        </form>
+
+        <!-- GROUP BUY -->
+        <form action="/cart/add" method="POST" class="cartForm">
+
+            <input type="hidden" name="productId" value="<%= product._id %>">
+            <input type="hidden" name="quantity" id="groupQty" value="1">
+
+            <input type="hidden" name="size" class="selectedSize">
+            <input type="hidden" name="color" class="selectedColor">
+
+            <input type="hidden" name="groupBuy" value="true">
+
+            <button class="group-btn">Join Group Buy</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- SAFE DATA -->
+<script>
+const joined = <%- JSON.stringify(group ? group.members.length : 0) %>;
+const total = <%- JSON.stringify(product.groupSize || 1) %>;
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const percent = total > 0 ? (joined / total) * 100 : 0;
+
+    const bar = document.getElementById("progressFill");
+    if (bar) bar.style.width = percent + "%";
+
+    const messages = [
+        "🔥 Someone joined just now",
+        "🔥 Someone joined 1 min ago",
+        "🔥 Someone joined 2 mins ago",
+        "🔥 Someone joined 4 mins ago",
+        "🔥 Someone just secured their slot"
+    ];
+
+    let i = 0;
+
+    setInterval(() => {
+        const el = document.getElementById("liveText");
+        if (!el) return;
+
+        el.style.opacity = 0;
+
+        setTimeout(() => {
+            el.textContent = messages[i];
+            el.style.opacity = 1;
+            i = (i + 1) % messages.length;
+        }, 300);
+
+    }, 3000);
+
+});
+
+// IMAGE CHANGE
+function changeImage(src){
+    document.getElementById("mainImage").src = src;
+}
+
+// QTY
+function increaseQty(){
+    const qty = document.getElementById("qty");
+    qty.value = +qty.value + 1;
+    document.getElementById("cartQty").value = qty.value;
+    document.getElementById("groupQty").value = qty.value;
+}
+
+function decreaseQty(){
+    const qty = document.getElementById("qty");
+    if (+qty.value > 1) {
+        qty.value = +qty.value - 1;
+        document.getElementById("cartQty").value = qty.value;
+        document.getElementById("groupQty").value = qty.value;
+    }
+}
+
+// SYNC OPTIONS BEFORE SUBMIT
+document.querySelectorAll(".cartForm").forEach(form => {
+    form.addEventListener("submit", function () {
+
+        const size = document.getElementById("sizeSelect")?.value;
+        const color = document.getElementById("colorSelect")?.value;
+
+        form.querySelector(".selectedSize").value = size;
+        form.querySelector(".selectedColor").value = color;
+
+    });
+});
+</script>
+
+</body>
+</html>

@@ -106,6 +106,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   word-break: break-word;
   -webkit-font-smoothing: antialiased;
+  /* background-color: black; */
 }
 
 section {
@@ -24251,4 +24252,421 @@ footer .footer-navbar .nav-item:last-child a {
 .review-img {
 
   font-size: 3rem;
+}
+.chat-nav{
+  background-color: red;
+  margin-top: 2rem;
+
+}
+/* chat ui */
+/* PAGE BACKGROUND */
+body {
+  background: #fafafa;
+}
+
+/* CENTER FEED */
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+
+/* POST CARD */
+.post-card {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+/* HEADER */
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
+/* IMAGE */
+.post-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* CONTENT */
+.post-content {
+  padding: 10px 15px;
+}
+
+/* TEXT */
+.post-text {
+  margin-bottom: 8px;
+}
+
+/* GROUP INFO */
+.group-info {
+  font-size: 14px;
+  color: #555;
+}
+
+/* BUTTON */
+.join-btn {
+  margin-top: 10px;
+  width: 100%;
+  background: #0095f6;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.join-btn:hover {
+  background: #1877f2;
+}
+
+/* COMMENTS */
+.comment {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* COMMENT INPUT */
+.comment-form input {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #eee;
+  padding: 10px;
+  outline: none;
+}
+
+/* slider */
+    /* slider */
+/* SECTION */
+.trending {
+  padding: 20px;
+  margin-top: 7rem;
+}
+
+.trending h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* WRAPPER */
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* SLIDER */
+.slider {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 5px;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.mini-card {
+  min-width: 150px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.mini-card:hover {
+  transform: translateY(-5px);
+}
+
+.mini-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.mini-card p {
+  font-size: 13px;
+  margin: 8px 10px 2px;
+  font-weight: 500;
+}
+
+.mini-card span {
+  font-size: 12px;
+  color: #777;
+  margin: 0 10px 10px;
+  display: block;
+}
+
+/* NAV BUTTONS */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  line-height: 1;
+}
+
+.prev:hover,
+.next:hover {
+  background: #000;
+}
+
+.prev {
+  left: 5px;
+}
+
+.next {
+  right: 5px;
+}
+.trending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.view-all-btn {
+  font-size: 13px;
+  color: #ff3c78;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+/* video */
+.mini-card video {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+/* slider ends */
+
+/* product card starts */
+/* =========================
+   GLOBAL FIX
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   GROUP SECTION
+========================= */
+.group-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.section-header p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* =========================
+   PRODUCT GRID (CLEAN)
+========================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+.product-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* controls shape nicely */
+  background: #f6f6f6;   /* soft fallback background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* keeps style but controlled by ratio */
+  object-position: center top; /* IMPORTANT: shows face instead of cutting randomly */
+  display: block;
+}
+
+/* =========================
+   BADGE
+========================= */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 60, 120, 0.9);
+  color: #fff;
+  font-size: 7px;
+  padding: 4px;
+  border-radius: 20px;
+}
+
+/* =========================
+   INFO
+========================= */
+.product-info {
+  padding: 12px;
+}
+.product-info {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* controls spacing cleanly */
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.product-name {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+
+/* =========================
+   PRICE ROW
+========================= */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+
+.product-price {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================
+   CART BUTTON
+========================= */
+.cart-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--aluminium-grey);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart-btn:hover {
+  background: #e0326a;
+  transform: scale(1.05);
+}
+
+.cart-btn i {
+  font-size: 14px;
 }
