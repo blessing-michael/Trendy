@@ -1,68 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>My Orders</title>
+    <title>Treenndy</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description"
+        content="Cheapest online stores for your turkey wears">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="/css/icon.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/feed.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/demos/fashion-store/fashion-store.css" />
+    <link rel="stylesheet" href="/css/order.css">
+    <!-- Font Awesome 6 (latest) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <style>
-    body {
-      font-family: Arial;
-      background: #f6f6f6;
-      margin: 0;
-      padding: 20px;
-    }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .order {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-    }
-
-    .items {
-      margin-top: 10px;
-      border-top: 1px solid #eee;
-      padding-top: 10px;
-    }
-
-    .item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-    }
-
-    .status {
-      padding: 5px 10px;
-      background: #ddd;
-      display: inline-block;
-      border-radius: 5px;
-      font-size: 12px;
-    }
-
-    .total {
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    h2 {
-      margin-bottom: 20px;
-    }
-  </style>
 </head>
 
-<body>
+<body data-mobile-nav-style="classic">
+    <% if (success) { %>
+<div class="toast-message success-toast" id="orderToast">
+  🎉 Order placed successfully
+</div>
+<% } %>
+    <!-- start header -->
+    <header class="header-with-topbar">
+     
+            <div
+                class="header-top-bar top-bar-light bg-black disable-fixed md-border-bottom border-color-transparent-dark-very-light">
+                <div class="container-fluid">
+                    <div class="row h-40px align-items-center m-0">
+                        <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
+                            <div class="text-green">Enjoy the cheapest prices on all styles.</div>
+                            <a href="#" class="text-green fw-600 ms-5px text-hover"><span
+                                    class="text-decoration-line-bottom">Shop now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header top bar -->
+            <!-- start navigation -->
+            <nav class="navbar navbar-expand-lg header-light bg-white disable-fixed center-logo">
+                <div class="container-fluid">
+                    <div class="col-auto col-xxl-3 col-lg-2 menu-logo">
+                        <div class="header-icon d-none d-lg-flex">
+                            <div class="widget-text icon alt-font">
+                                <a href="/contact">
+                                        <i class="fa-brands fa-tiktok d-inline-block  me-5px"></i><span
+                                        class="d-none d-xxl-inline-block">Find stores</span></a>
+                            </div>
+                            <div class="widget-text icon alt-font">
+                                <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="fa-brands fa-instagram d-inline-block me-5px"></i><span
+                                        class="d-none d-xxl-inline-block">Follow us</span></a>
+                            </div>
+                        </div>
+                        <a class="navbar-brand" href="demo-fashion-store.html">
+                            <h1 class="fs-3 name-logo">Trendy</h1>
+
+                            <!-- <img src="images/demo-fashion-store-logo-black.png"
+                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="default-logo">
+                        <img src="images/demo-fashion-store-logo-black.png"
+                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="alt-logo">
+                        <img src="images/demo-fashion-store-logo-black.png"
+                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="mobile-logo"> -->
+                        </a>
+                    </div>
+                    <div class="col-auto col-xxl-6 col-lg-8 menu-order">
+                        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                            <ul class="navbar-nav alt-font navbar-left justify-content-end">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item dropdown submenu">
+                                    <a href="/chat" class="nav-link">Chat</a>
+                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink1"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    
+                                </li>
+                               
+                            </ul>
+                            <ul class="navbar-nav alt-font navbar-right justify-content-start">
+                                <li class="nav-item">
+                                    <!-- <a href="demo-fashion-store-magazine.html" class="nav-link">Magazine</a> -->
+                                </li>
+                                <li class="nav-item dropdown simple-dropdown">
+                                    <a href="javascript:void(0);" class="nav-link">Pages</a>
+                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                                        <!-- <li><a href="demo-fashion-store-about.html">About</a></li>
+                                    <li><a href="demo-fashion-store-faq.html">Faq</a></li>
+                                    <li><a href="demo-fashion-store-wishlist.html">Wishlist</a></li> -->
+                                        <li><a href="/orders">My orders</a></li>
+                                        <!-- <li><a href="/cart">Cart</a></li> -->
+                                         <li><a href="/cart">Cart</a></li>
+                                        <li><a href="/checkout">Checkout</a></li>
+                                        <li><a href="/">Big sizes</a></li>
+                                        <li><a href="/trending">Small sizes</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/contact" class="nav-link">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto col-xxl-3 col-lg-2 text-end">
+                        <div class="header-icon">
+                           
+                            <div class="widget-text icon alt-font">
+
+                               
+                                <% if (isAuth) { %>
+                                    <!-- Show when logged in -->
+                                    <!-- <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+                                    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a> -->
+                                    <a href="/profile"> Profile</a>
+                                    <a href="/logout"> Logout</a>
+                                    <% } else { %>
+                                        <!-- Show when NOT logged in -->
+                                        <a href="/login"> Login</a>
+                                        <a href="/register">Signup</a>
+                                        <% } %>
+                            </div>
+                            <div class="header-cart-icon icon">
+                                <div class="header-cart dropdown">
+                                    <a href="/cart">
+  <i class="fa-solid fa-cart-shopping"></i>
+
+  <span class="cart-count alt-font text-white bg-dark-gray">
+    <%= cartCount %>
+  </span>
+</a>
+                                            <!-- <i class="feather icon-feather-shopping-bag"></i>  -->
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+         </header> 
+
+         <!-- helper function -->
+
+        <!-- end header -->
+
+
+
 
 <div class="container">
 
   <h2>My Orders</h2>
 
-  <% if (orders.length === 0) { %>
-    <p>You have no orders yet.</p>
+  <% if (!orders || orders.length === 0) { %>
+    <div class="empty">
+      You have no orders yet 🛒
+    </div>
   <% } %>
 
   <% orders.forEach(order => { %>
@@ -74,25 +191,37 @@
       </div>
 
       <div>
-        <span class="status"><%= order.status %></span>
+        <span class="status"><%= order.status || "Processing" %></span>
       </div>
 
       <div class="items">
 
-        <% order.items.forEach(item => { %>
-          <div class="item">
-            <span><%= item.productId.name %> × <%= item.quantity %></span>
-            <span>₦<%= item.productId.price * item.quantity %></span>
-          </div>
-        <% }) %>
+       <% order.items.forEach(item => { %>
 
+  <div class="item">
+
+    <!-- <span>
+      <%= item.name || "Old product" %> × <%= item.quantity || 1 %>
+      <%= item.name || item.productId?.name || "Product unavailable" %>
+      
+    </span> -->
+<span>
+  <%= item.productId?.name || item.name || "Product unavailable" %> × <%= item.quantity || 1 %>
+</span>
+    <span>
+      ₦<%= (item.price || 0) * (item.quantity || 1) %>
+    </span>
+
+  </div>
+
+<% }) %>
       </div>
 
       <div class="total">
-        Total: ₦<%= order.total %>
+        Total: ₦<%= order.total || 0 %>
       </div>
 
-      <div style="font-size:12px; margin-top:10px;">
+      <div style="font-size:12px; margin-top:10px; color:#666;">
         <%= new Date(order.createdAt).toDateString() %>
       </div>
 
@@ -102,5 +231,26 @@
 
 </div>
 
+
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/vendors.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script>
+setTimeout(() => {
+
+  const toast = document.getElementById("orderToast");
+
+  if (toast) {
+    toast.style.transition = "0.3s ease";
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(100%)";
+
+    setTimeout(() => toast.remove(), 300);
+  }
+
+}, 2500);
+</script>
+
 </body>
-</html> 
+</html>

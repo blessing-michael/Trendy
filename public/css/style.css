@@ -108,6 +108,15 @@ body {
   -webkit-font-smoothing: antialiased;
   /* background-color: black; */
 }
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 
 section {
   padding-top: 110px;
@@ -18250,7 +18259,8 @@ canvas {
 
 /* Social media icon */
 .elements-social .behance:hover {
-  color: #1769ff;
+  /* color: #1769ff; */
+  color: grey;
 }
 
 .elements-social .behance-square:hover {
@@ -18569,7 +18579,7 @@ canvas {
 }
 
 .elements-social .dark li a {
-  color: var(--dark-gray);
+  color: var(--dark-gray); 
 }
 
 .elements-social .icon-with-animation a:hover {
@@ -24451,16 +24461,34 @@ main {
   margin-bottom: 10px;
 }
 
-.view-all-btn {
-  font-size: 13px;
-  color: #ff3c78;
+
+
+.view-all-btn:hover {
   text-decoration: none;
+  color: whitesmoke;
+  opacity: 0.7;
+}
+/* view all new style  */
+.view-all-btn {
+  padding: 4px 8px;
+  background: linear-gradient(135deg, #ff4d4d, #ff9900);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 12px;
   font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.3);
+  transition: all 0.3s ease;
 }
 
 .view-all-btn:hover {
-  text-decoration: underline;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 77, 77, 0.4);
 }
+
 /* video */
 .mini-card video {
   width: 100%;
@@ -24475,15 +24503,7 @@ main {
 /* =========================
    GLOBAL FIX
 ========================= */
-* {
-  box-sizing: border-box;
-}
 
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
 
 /* =========================
    GROUP SECTION
@@ -24523,38 +24543,13 @@ html, body {
   width: 100%;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-  .product-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 400px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* =========================
    PRODUCT CARD
 ========================= */
 .product-card {
   position: relative;
   background: #fff;
-  border-radius: 14px;
+  /* border-radius: 14px; */
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   transition: 0.2s ease;
@@ -24669,4 +24664,123 @@ html, body {
 
 .cart-btn i {
   font-size: 14px;
+}
+.text-hover:hover {
+  color: white !important;
+}
+.elements-social ul li a i {
+  color: grey !important;
+}
+/* login message */
+.alert-error{
+  background: #ffebee;
+  color: #c62828;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.alert-success{
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.login-toast{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  background: #1f1f1f;
+  color: white;
+
+  padding: 14px 18px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  z-index: 9999;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+  animation: slideIn 0.4s ease;
+}
+
+.login-toast i{
+  color: #4caf50;
+  font-size: 18px;
+}
+
+@keyframes slideIn{
+
+  from{
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+/* cart success message */
+.toast-message{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  z-index: 9999;
+  animation: slideIn 0.4s ease;
+}
+
+.success-toast{
+  background: #2e7d32;
+}
+
+@keyframes slideIn{
+  from{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }

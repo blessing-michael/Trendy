@@ -716,7 +716,7 @@ body{
       display: flex;
       gap: 30px;
       max-width: 1100px;
-      margin: 50px auto;
+      margin: 10rem auto;
       padding: 20px;
     }
 
@@ -778,6 +778,7 @@ body{
     gap:50px;
     padding:50px;
     flex-wrap:wrap;
+    margin-top: 9rem;
   
 }
 
@@ -1308,3 +1309,9 @@ body{
     }
 }
 /* new product syling ends */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .product-detail {
+    margin-top: 12rem;
+  }
+}

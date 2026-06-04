@@ -1,3 +1,5 @@
+
+require("dotenv").config();
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
@@ -21,7 +23,9 @@ const Post = require("./models/Post");
 const Order = require("./models/Order");
 
 // DB
-const mongoURI = "mongodb://localhost:27017/sessions";
+
+// const mongoURI = "mongodb://localhost:27017/sessions";
+const mongoURI = process.env.MONGO_URI;
 // IMAGE STORAGE
 const multer = require("multer");
 // const path = require("path");
@@ -42,6 +46,10 @@ const upload = multer({ storage });
 mongoose.connect(mongoURI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch(err => console.error("❌ MongoDB Error:", err));
+
+  mongoose.connection.on("connected", () => {
+  console.log("DB Connected:", mongoose.connection.name);
+});
 
 // Session store
 const store = new MongoDBSession({
@@ -69,9 +77,7 @@ app.use(async (req, res, next) => {
     if (req.session.user) {
       const user = await UserModel.findById(req.session.user._id);
 
-      res.locals.cartCount = user.cart.reduce((sum, item) => {
-        return sum + item.quantity;
-      }, 0);
+   res.locals.cartCount = user.cart.length;
 
     } else {
       res.locals.cartCount = 0;
@@ -84,6 +90,24 @@ app.use(async (req, res, next) => {
     res.locals.cartCount = 0;
     next();
   }
+});
+// clear cartapp.get("/clear-cart", async (req, res) => {
+
+app.get("/clear-cart", async (req, res) => {
+
+  if (!req.session.user) {
+    return res.redirect("/login");
+  }
+
+  await UserModel.findByIdAndUpdate(
+    req.session.user._id,
+    {
+      cart: []
+    }
+  );
+
+  res.send("Cart cleared ✅");
+
 });
 
 
@@ -99,6 +123,18 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use((req, res, next) => {
   res.locals.isAuth = req.session.isAuth || false;
   res.locals.user = req.session.user || null;
+  next();
+});
+
+// login message session
+app.use((req, res, next) => {
+
+  res.locals.success = req.session.success || null;
+  res.locals.error = req.session.error || null;
+
+  req.session.success = null;
+  req.session.error = null;
+
   next();
 });
 
@@ -121,11 +157,15 @@ app.use((req, res, next) => {
 //     res.render("dashboard", { isAuth: false, products: [] });
 //   }
 // });
+
+
 app.get("/", async (req, res) => {
   try {
 
     const trendingProducts = await Product.find({ category: "trendy" });
     const products = await Product.find({ category: "classy" });
+  
+    
     const groups = await GroupBuy.find({ status: "open" });
 
     res.render("dashboard", {
@@ -145,6 +185,7 @@ app.get("/", async (req, res) => {
       isAuth: false
     });
   }
+  
 });
 app.get("/seed-products", async (req, res) => {
   try {
@@ -344,21 +385,20 @@ app.get("/cart", async (req, res) => {
     const user = await UserModel.findById(req.session.user._id)
       .populate("cart.productId");
 
-    // ✅ REMOVE BROKEN ITEMS (VERY IMPORTANT)
     const validCart = user.cart.filter(item => item.productId);
 
-    // ✅ SAFE TOTAL CALCULATION
     const total = validCart.reduce((sum, item) => {
       return sum + (item.productId.price || 0) * item.quantity;
     }, 0);
 
     res.render("cart", {
       cart: validCart,
-      total
+      total,
+      added: req.query.added === "1" // ✅ IMPORTANT FIX
     });
 
   } catch (err) {
-    console.log("CART ERROR:", err); // 👈 shows real error
+    console.log("CART ERROR:", err);
     res.send("Cart page error");
   }
 });
@@ -404,7 +444,8 @@ app.post("/cart/add", async (req, res) => {
       return res.redirect("/checkout");
     }
 
-    res.redirect("/cart");
+    // res.redirect("/cart");
+    res.redirect("/cart?added=1");
 
   } catch (err) {
     console.log(err);
@@ -536,23 +577,44 @@ app.post("/checkout", async (req, res) => {
       return sum + item.productId.price * item.quantity;
     }, 0);
 
-    await Order.create({
-      userId: user._id,
-      items: user.cart,
-      total,
+  await Order.create({
+  userId: user._id,
 
-      fullname: req.body.fullname,
-      phone: req.body.phone,
-      address: req.body.address,
-      city: req.body.city,
-      notes: req.body.notes
-    });
+  // items: user.cart.map(item => ({
+  //   name: item.productId.name,
+  //   price: item.productId.price,
+  //   quantity: item.quantity,
+  //   image: item.productId.image
+  // })),
+
+  items: user.cart.map(item => ({
+
+  productId: item.productId._id,
+
+  name: item.productId.name,
+  price: item.productId.price,
+  image: item.productId.image,
+
+  quantity: item.quantity
+
+})),
+
+  total,
+
+  fullname: req.body.fullname,
+  phone: req.body.phone,
+  address: req.body.address,
+  city: req.body.city,
+  notes: req.body.notes
+});
 
     // clear cart
     user.cart = [];
     await user.save();
 
-    res.send("Order placed successfully ✅");
+    // res.send("Order placed successfully ✅");
+    req.session.orderSuccess = "Order placed successfully 🎉";
+res.redirect("/orders?success=1");
 
   } catch (err) {
     console.log(err);
@@ -584,6 +646,7 @@ app.get("/profile", async (req, res) => {
   }
 });
 // ORDER DETAIL PAGE
+
 app.get("/orders", async (req, res) => {
   try {
     if (!req.session.user) return res.redirect("/login");
@@ -592,7 +655,10 @@ app.get("/orders", async (req, res) => {
       .populate("items.productId")
       .sort({ createdAt: -1 });
 
-    res.render("orders", { orders });
+    res.render("orders", {
+      orders,
+      success: req.query.success === "1"
+    });
 
   } catch (err) {
     console.log(err);
@@ -676,19 +742,61 @@ app.post("/register", async (req, res) => {
 // Login
 app.get("/login", (req, res) => res.render("login"));
 
+// app.post("/login", async (req, res) => {
+//   const { email, password } = req.body;
+
+//   const user = await UserModel.findOne({ email });
+//   if (!user) return res.send("User not found");
+
+//   const match = await bcrypt.compare(password, user.password);
+//   if (!match) return res.send("Wrong password");
+
+//   req.session.isAuth = true;
+//   req.session.user = user;
+
+//   res.redirect("/");
+// });
+
 app.post("/login", async (req, res) => {
+
   const { email, password } = req.body;
 
-  const user = await UserModel.findOne({ email });
-  if (!user) return res.send("User not found");
+  try {
 
-  const match = await bcrypt.compare(password, user.password);
-  if (!match) return res.send("Wrong password");
+    const user = await UserModel.findOne({ email });
 
-  req.session.isAuth = true;
-  req.session.user = user;
+    if (!user) {
 
-  res.redirect("/");
+      req.session.error = "User not found";
+      return res.redirect("/login");
+
+    }
+
+    const match = await bcrypt.compare(password, user.password);
+
+    if (!match) {
+
+      req.session.error = "Incorrect password";
+      return res.redirect("/login");
+
+    }
+
+    req.session.isAuth = true;
+    req.session.user = user;
+
+    req.session.success = "Login successful ✅";
+
+    res.redirect("/");
+
+  } catch (err) {
+
+    console.log(err);
+
+    req.session.error = "Something went wrong";
+    res.redirect("/login");
+
+  }
+
 });
 
 // Logout
@@ -799,6 +907,11 @@ io.on("connection", (socket) => {
 
 /* -------- START SERVER -------- */
 
-server.listen(5000, () => {
-  console.log("🚀 Running on http://localhost:5000");
+// server.listen(5000, () => {
+//   console.log("🚀 Running on http://localhost:5000");
+// });
+const PORT = process.env.PORT || 5000;
+
+server.listen(PORT, () => {
+  console.log(`🚀 Running on port ${PORT}`);
 });

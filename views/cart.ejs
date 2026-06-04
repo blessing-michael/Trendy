@@ -1,286 +1,179 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html class="no-js" lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cart</title>
+    <title>Treenndy</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ThemeZaa">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="description"
+        content="Cheapest online stores for your turkey wears">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- google fonts preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" href="css/vendors.min.css" />
+    <link rel="stylesheet" href="/css/icon.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/feed.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/demos/fashion-store/fashion-store.css" />
+    <link rel="stylesheet" href="/css/cart.css">
+    <!-- Font Awesome 6 (latest) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family: Arial, sans-serif;
-    background:#f5f5f5;
-    color:#111;
-}
-
-/* PAGE */
-.container{
-    width:95%;
-    max-width:1300px;
-    margin:auto;
-    padding:40px 0;
-}
-
-.page-title{
-    font-size:32px;
-    font-weight:700;
-    margin-bottom:30px;
-}
-
-/* MAIN LAYOUT */
-.cart-layout{
-    display:grid;
-    grid-template-columns: 2fr 1fr;
-    gap:25px;
-}
-
-@media(max-width:900px){
-
-    .cart-layout{
-        grid-template-columns:1fr;
-    }
-
-}
-
-/* LEFT SIDE */
-.cart-left{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-/* CART CARD */
-.cart-card{
-    background:#fff;
-    border-radius:18px;
-    padding:20px;
-    display:flex;
-    gap:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
-    align-items:flex-start;
-}
-
-@media(max-width:700px){
-
-    .cart-card{
-        flex-direction:column;
-    }
-
-}
-
-/* IMAGE */
-.cart-image{
-    width:170px;
-    height:200px;
-    border-radius:14px;
-    object-fit:cover;
-    background:#eee;
-}
-
-/* INFO */
-.cart-info{
-    flex:1;
-}
-
-.product-name{
-    font-size:22px;
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-.product-desc{
-    color:#666;
-    line-height:1.6;
-    margin-bottom:15px;
-}
-
-/* TAGS */
-.tag-row{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:15px;
-}
-
-.tag{
-    background:#f2f2f2;
-    padding:7px 12px;
-    border-radius:50px;
-    font-size:13px;
-    font-weight:600;
-}
-
-.group-tag{
-    background:#ffe9e9;
-    color:#d40000;
-}
-
-/* PRICE */
-.price-row{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:15px;
-    flex-wrap:wrap;
-}
-
-.single-price{
-    font-size:18px;
-    font-weight:bold;
-}
-
-.group-price{
-    color:#d40000;
-    font-weight:700;
-}
-
-/* QUANTITY */
-.qty-wrapper{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-bottom:15px;
-}
-
-.qty-box{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:#f3f3f3;
-    border-radius:50px;
-    padding:5px;
-}
-
-.qty-box button{
-    width:35px;
-    height:35px;
-    border:none;
-    border-radius:50%;
-    cursor:pointer;
-    font-size:18px;
-    font-weight:bold;
-}
-
-.btn-dec{
-    background:#222;
-    color:#fff;
-}
-
-.btn-inc{
-    background:#1ea54c;
-    color:#fff;
-}
-
-/* SUBTOTAL */
-.subtotal{
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:15px;
-}
-
-/* REMOVE */
-.remove-btn{
-    background:#ffeded;
-    color:#d40000;
-    border:none;
-    padding:10px 18px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* RIGHT SIDE */
-.summary-box{
-    background:#fff;
-    border-radius:20px;
-    padding:25px;
-    height:fit-content;
-    position:sticky;
-    top:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
-}
-
-.summary-title{
-    font-size:24px;
-    font-weight:700;
-    margin-bottom:25px;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:18px;
-    color:#555;
-}
-
-.total-row{
-    display:flex;
-    justify-content:space-between;
-    font-size:22px;
-    font-weight:700;
-    margin:25px 0;
-}
-
-/* INFO BOX */
-.info-box{
-    background:#faf5e9;
-    border:1px solid #f0deb1;
-    padding:15px;
-    border-radius:12px;
-    font-size:14px;
-    line-height:1.7;
-    margin-bottom:20px;
-}
-
-/* BUTTONS */
-.checkout-btn{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:14px;
-    background:#111;
-    color:#fff;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    margin-bottom:12px;
-}
-
-.continue-btn{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:14px;
-    background:#f3f3f3;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* EMPTY */
-.empty-box{
-    background:#fff;
-    padding:60px 20px;
-    border-radius:20px;
-    text-align:center;
-}
-
-</style>
 
 </head>
 
-<body>
+<body data-mobile-nav-style="classic">
+    <% if (added) { %>
+<div class="toast-message success-toast" id="cartToast">
+  🛒 Item added to cart
+</div>
+<% } %>
+    
+    <!-- start header -->
+    <header class="header-with-topbar">
+     
+            <div
+                class="header-top-bar top-bar-light bg-black disable-fixed md-border-bottom border-color-transparent-dark-very-light">
+                <div class="container-fluid">
+                    <div class="row h-40px align-items-center m-0">
+                        <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
+                            <div class="text-green">Enjoy the cheapest prices on all styles.</div>
+                            <a href="#" class="text-green fw-600 ms-5px text-hover"><span
+                                    class="text-decoration-line-bottom">Shop now</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end header top bar -->
+            <!-- start navigation -->
+            <nav class="navbar navbar-expand-lg header-light bg-white disable-fixed center-logo">
+                <div class="container-fluid">
+                    <div class="col-auto col-xxl-3 col-lg-2 menu-logo">
+                        <div class="header-icon d-none d-lg-flex">
+                            <div class="widget-text icon alt-font">
+                                <a href="/contact">
+                                        <i class="fa-brands fa-tiktok d-inline-block  me-5px"></i><span
+                                        class="d-none d-xxl-inline-block">Find stores</span></a>
+                            </div>
+                            <div class="widget-text icon alt-font">
+                                <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="fa-brands fa-instagram d-inline-block me-5px"></i><span
+                                        class="d-none d-xxl-inline-block">Follow us</span></a>
+                            </div>
+                        </div>
+                        <a class="navbar-brand" href="demo-fashion-store.html">
+                            <h1 class="fs-3 name-logo">Trendy</h1>
 
+                            <!-- <img src="images/demo-fashion-store-logo-black.png"
+                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="default-logo">
+                        <img src="images/demo-fashion-store-logo-black.png"
+                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="alt-logo">
+                        <img src="images/demo-fashion-store-logo-black.png"
+                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="mobile-logo"> -->
+                        </a>
+                    </div>
+                    <div class="col-auto col-xxl-6 col-lg-8 menu-order">
+                        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                            <span class="navbar-toggler-line"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                            <ul class="navbar-nav alt-font navbar-left justify-content-end">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link">Home</a>
+                                </li>
+                                <li class="nav-item dropdown submenu">
+                                    <a href="/chat" class="nav-link">Chat</a>
+                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink1"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    
+                                </li>
+                               
+                            </ul>
+                            <ul class="navbar-nav alt-font navbar-right justify-content-start">
+                                <li class="nav-item">
+                                    <!-- <a href="demo-fashion-store-magazine.html" class="nav-link">Magazine</a> -->
+                                </li>
+                                <li class="nav-item dropdown simple-dropdown">
+                                    <a href="javascript:void(0);" class="nav-link">Pages</a>
+                                    <i class="fa-solid fa-angle-down dropdown-toggle" id="navbarDropdownMenuLink3"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                                        <!-- <li><a href="demo-fashion-store-about.html">About</a></li>
+                                    <li><a href="demo-fashion-store-faq.html">Faq</a></li>
+                                    <li><a href="demo-fashion-store-wishlist.html">Wishlist</a></li> -->
+                                        <li><a href="/orders">My orders</a></li>
+                                        <!-- <li><a href="/cart">Cart</a></li> -->
+                                         <li><a href="/cart">Cart</a></li>
+                                        <li><a href="/checkout">Checkout</a></li>
+                                        <li><a href="/">Big sizes</a></li>
+                                        <li><a href="/trending">Small sizes</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/contact" class="nav-link">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-auto col-xxl-3 col-lg-2 text-end">
+                        <div class="header-icon">
+                           
+                            <div class="widget-text icon alt-font">
+
+                               
+                                <% if (isAuth) { %>
+                                    <!-- Show when logged in -->
+                                    <!-- <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+                                    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a> -->
+                                    <a href="/profile"> Profile</a>
+                                    <a href="/logout"> Logout</a>
+                                    <% } else { %>
+                                        <!-- Show when NOT logged in -->
+                                        <a href="/login"> Login</a>
+                                        <a href="/register">Signup</a>
+                                        <% } %>
+                            </div>
+                            <div class="header-cart-icon icon">
+                                <div class="header-cart dropdown">
+                                    <a href="/cart">
+  <i class="fa-solid fa-cart-shopping"></i>
+
+  <span class="cart-count alt-font text-white bg-dark-gray">
+    <%= cartCount %>
+  </span>
+</a>
+                                            <!-- <i class="feather icon-feather-shopping-bag"></i>  -->
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+         </header> 
+
+         <!-- helper function -->
+
+        <!-- end header -->
 <div class="container">
 
-<h1 class="page-title">
+<!-- <h1 class="page-title">
     Shopping Cart
-</h1>
+</h1> -->
 
 <% if(cart.length === 0){ %>
 
@@ -502,6 +395,24 @@ body{
 <% } %>
 
 </div>
+
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/vendors.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+        <script>
+setTimeout(() => {
+  const toast = document.getElementById("cartToast");
+
+  if (toast) {
+    toast.style.transition = "0.3s ease";
+    toast.style.opacity = "0";
+    toast.style.transform = "translateX(100%)";
+
+    setTimeout(() => toast.remove(), 300);
+  }
+}, 2500);
+</script>
 
 </body>
 </html>

@@ -11,6 +11,7 @@ body {
   padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
+  margin-top: 7rem;
 }
 
 /* HEADER */
@@ -124,4 +125,86 @@ body {
 
 .cart-btn i {
   font-size: 14px;
+}
+.products-grid{
+  display:grid !important;
+  grid-template-columns:repeat(5, 1fr) !important;
+  gap:20px;
+}
+/* added for space removal */
+.product-card{
+    background: #f3f3f3;
+}
+
+.product-info{
+    padding: 14px 20px !important;
+}
+
+.product-info h3{
+    margin: 0 0 10px 0 !important;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.price-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0 !important;
+}
+
+.price-row p{
+    margin: 0 !important;
+    font-weight: bold;
+}
+
+.product-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.product-info{
+    flex: unset !important;
+    min-height: auto !important;
+}
+
+.product-card{
+    height: auto !important;
+    min-height: unset !important;
+}
+
+.product-info{
+    padding: 10px 14px !important;
+    min-height: unset !important;
+    height: auto !important;
+}
+
+.product-info h3{
+    margin-bottom: 2px !important;
+}
+
+.price-row{
+    margin-top: 2px !important;
+}
+
+.price-row p{
+    margin-bottom: 0 !important;
+}
+.product-info{
+    display: block !important;
+}
+
+.price-row{
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+}
+
+.price-row p{
+    line-height: 1 !important;
+}
+
+.product-info h3{
+    line-height: 1 !important;
 }

@@ -1,7 +1,11 @@
+
+
+
+  require("dotenv").config();
 const mongoose = require("mongoose");
 const Product = require("./models/Product");
 
-mongoose.connect("mongodb://127.0.0.1:27017/sessions")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log("DB error:", err));
 
@@ -59,10 +63,10 @@ const seed = async () => {
 
         description: "classy outfit.",
 
-        price: 85500,
+        price: 89500,
 
         singlePrice: 0,
-        groupPrice: 85500,
+        groupPrice: 89500,
 
         purchaseType: "hybrid",
 
@@ -78,7 +82,7 @@ const seed = async () => {
       },
 
       {
-        name: "black-stones",
+        name: "black stones",
 
         category: "classy",
 
@@ -90,10 +94,10 @@ const seed = async () => {
 
         description: "classy outfit.",
 
-        price: 83500,
+        price: 86500,
 
         singlePrice: 0,
-        groupPrice: 83500,
+        groupPrice: 86500,
 
         purchaseType: "hybrid",
 
@@ -245,10 +249,10 @@ const seed = async () => {
 
         description: "classy outfit.",
 
-        price: 83500,
+        price: 77500,
 
-        singlePrice: 90500,
-        groupPrice: 83500,
+        singlePrice: 0,
+        groupPrice: 77500,
 
         purchaseType: "hybrid",
 
@@ -494,10 +498,10 @@ const seed = async () => {
 
         description: "classy outfit.",
 
-        price: 84500,
+        price: 89500,
 
         singlePrice: 0,
-        groupPrice: 83500,
+        groupPrice: 89500,
 
         purchaseType: "hybrid",
 
@@ -526,10 +530,10 @@ const seed = async () => {
 
         description: "classy outfit.",
 
-        price: 84500,
+        price: 89500,
 
         singlePrice: 0,
-        groupPrice: 83500,
+        groupPrice: 89500,
 
         purchaseType: "hybrid",
 
@@ -589,10 +593,10 @@ const seed = async () => {
 
         description: "classy outfit.",
 
-        price: 84500,
+        price: 112500,
 
         singlePrice: 0,
-        groupPrice: 83500,
+        groupPrice: 112500,
 
         purchaseType: "hybrid",
 
@@ -620,10 +624,10 @@ const seed = async () => {
 
         description: "classy outfit",
 
-        price: 87000,
+        price: 88000,
 
         singlePrice: 0,
-        groupPrice: 87000,
+        groupPrice: 88000,
 
         purchaseType: "hybrid",
 
@@ -716,7 +720,7 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 49000,
+        price: 50250,
 
         singlePrice: 0,
 
@@ -779,11 +783,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 52000,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 52000,
 
         purchaseType: "hybrid",
 
@@ -1097,11 +1101,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 69000,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 69000,
 
         purchaseType: "hybrid",
 
@@ -1128,11 +1132,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 82500,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 82500,
 
         purchaseType: "hybrid",
 
@@ -1159,11 +1163,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 58000,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 58000,
 
         purchaseType: "hybrid",
 
@@ -1190,11 +1194,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 60500,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 60500,
 
         purchaseType: "hybrid",
 
@@ -1221,11 +1225,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 46500,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 46500,
 
         purchaseType: "hybrid",
 
@@ -1283,11 +1287,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 53500,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 53500,
 
         purchaseType: "hybrid",
 
@@ -1314,11 +1318,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 66600,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 66500,
 
         purchaseType: "hybrid",
 
@@ -1346,11 +1350,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 51500,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 51500,
 
         purchaseType: "hybrid",
 
@@ -1378,11 +1382,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 40500,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 40500,
 
         purchaseType: "hybrid",
 
@@ -1409,11 +1413,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 48000,
+        price: 69000,
 
-        singlePrice: 48000,
+        singlePrice: 0,
 
-        groupPrice: 45000,
+        groupPrice: 69000,
 
         purchaseType: "hybrid",
 
