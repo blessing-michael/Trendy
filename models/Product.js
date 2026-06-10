@@ -40,13 +40,13 @@ const productSchema = new mongoose.Schema({
     },
     // new added
 
+
+
 category: {
     type: String,
-    enum: ["trendy", "classy"],
+    enum: ["trendy", "classy", "modest"],
     default: "trendy"
 },
-
-
 
     // new end
 

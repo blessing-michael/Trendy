@@ -40,7 +40,7 @@
                 <div class="container-fluid">
                     <div class="row h-40px align-items-center m-0">
                         <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
-                            <div class="text-green">Enjoy the cheapest prices on all styles.</div>
+                            <div class="text-green">Buy authentic Turkish clothing at wholesale rates. Simply join a buying group and unlock massive savings on every style.</div>
                             <a href="#" class="text-green fw-600 ms-5px text-hover"><span
                                     class="text-decoration-line-bottom">Shop now</span></a>
                         </div>
@@ -65,14 +65,14 @@
                             </div>
                         </div>
                         <a class="navbar-brand" href="demo-fashion-store.html">
-                            <h1 class="fs-3 name-logo">Trendy</h1>
+                            <!-- <h1 class="fs-3 name-logo">Trendy</h1> -->
 
-                            <!-- <img src="images/demo-fashion-store-logo-black.png"
-                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="default-logo">
-                        <img src="images/demo-fashion-store-logo-black.png"
-                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="alt-logo">
-                        <img src="images/demo-fashion-store-logo-black.png"
-                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="mobile-logo"> -->
+                            <img src="/images/logo.png"
+                            data-at2x="/images/logo.png" alt="" class="default-logo">
+                        <img src="/images/logo.png"
+                            data-at2x="/images/logo.png" alt="" class="alt-logo">
+                        <img src="/images/logo.png"
+                            data-at2x="/images/logo.png" alt="" class="mobile-logo">
                         </a>
                     </div>
                     <div class="col-auto col-xxl-6 col-lg-8 menu-order">
@@ -114,16 +114,48 @@
                                         <li><a href="/checkout">Checkout</a></li>
                                         <li><a href="/">Big sizes</a></li>
                                         <li><a href="/trending">Small sizes</a></li>
+                                        <li><a href="/modest">Modest Collection</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/contact" class="nav-link">Contact</a>
                                 </li>
                             </ul>
+                            <!-- MOBILE ONLY -->
+<ul class="navbar-nav d-lg-none mt-3">
+
+    <% if (isAuth) { %>
+        <li class="nav-item">
+            <a href="/profile" class="nav-link">Profile</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/logout" class="nav-link">Logout</a>
+        </li>
+
+    <% } else { %>
+
+        <li class="nav-item">
+            <a href="/login" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/register" class="nav-link">Signup</a>
+        </li>
+
+    <% } %>
+
+    <li class="nav-item">
+        <a href="/cart" class="nav-link">
+            Cart (<%= cartCount %>)
+        </a>
+    </li>
+
+</ul>
                         </div>
                     </div>
                     <div class="col-auto col-xxl-3 col-lg-2 text-end">
-                        <div class="header-icon">
+                        <div class="header-icon  d-none d-lg-flex">
                            
                             <div class="widget-text icon alt-font">
 
@@ -195,7 +227,7 @@
         <!-- HEADER -->
         <div class="section-header">
             <h2> Group Buy Deals</h2>
-            <p>Join others and unlock cheaper prices</p>
+            <p>Group buying allows us to offer prices far below regular retail stores.</p>
         </div>
 
         <!-- PRODUCT GRID -->
@@ -277,7 +309,7 @@
                             <div class="swiper-slide">
                                 <div
                                     class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">
-                                  Low prices, premium style</div>
+                                  Buy authentic Turkish clothing at wholesale rates. Simply join a buying group and shop now.</div>
                             </div>
                             <!-- end client item -->
                             <!-- start client item -->
@@ -291,7 +323,7 @@
                             <div class="swiper-slide">
                                 <div
                                     class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">
-                                    Affordable fashion for everyone</div>
+                                    Group buying allows us to offer prices far below regular retail stores.</div>
                             </div>
                             <!-- end client item -->
                             <!-- start client item -->
@@ -312,7 +344,7 @@
                             <div class="swiper-slide">
                                 <div
                                     class="alt-font fs-26 fw-500 text-dark-gray border-color-extra-medium-gray border-end pt-30px pb-30px ps-60px pe-60px sm-p-25px">
-                                         Fast delivery across Nigeria</div>
+                                         Group buying allows us to offer prices far below regular retail stores.</div>
                             </div>
                             <!-- end client item -->
                             <!-- start client item -->
@@ -433,11 +465,12 @@
 
                     <!-- start footer column -->
                     <div class="col-12 col-md-auto sm-mb-15px text-center text-md-start">
-                        <h4 class="name-logo">Trendy</h4>
-                        <!-- <a href="demo-fashion-store.html" class="footer-logo"><img
-                            src="images/demo-fashion-store-logo-white.png"
-                            data-at2x="images/demo-fashion-store-logo-white@2x.png" alt="" class="default-logo"></a> -->
+                        <!-- <h4 class="name-logo">Trendy</h4> -->
+                        <a href="" class="footer-logo"><img
+                            src="\images\trend-l.png"
+                            data-at2x="images/demo-fashion-store-logo-white@2x.png" alt="" class="default-logo"></a>
                     </div>
+                    <!-- <img src="/images/trend-l.png" alt=""> -->
                     <!-- end footer column -->
                     <!-- start footer column -->
                     <div class="col">

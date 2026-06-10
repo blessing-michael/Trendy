@@ -43,7 +43,8 @@ Table of contents
 ====================================== */
 :root {
   --base-color: #2946f3;
-  --white: #fe6474;
+  --whitee: #fe6474;
+  --white: #121111;
   --black: #000000;
   --red: #dc3131;
   --light-red: #feedec;
@@ -8923,12 +8924,14 @@ header.sticky.sticky-active [data-header-hover=dark] {
 }
 
 header.sticky.sticky-active [data-header-hover=dark] .navbar-nav .nav-item:hover .nav-link {
-  color: var(--white);
+  /* color: var(--white); */
+  color: whitesmoke;
   opacity: 0.6;
 }
 
 header.sticky.sticky-active [data-header-hover=dark] .navbar-nav .nav-link {
-  color: var(--white);
+  /* color: var(--white); */
+  color: whitesmoke;
 }
 
 header.sticky.sticky-active [data-header-hover=dark] .icon>a {
@@ -8977,7 +8980,8 @@ header.sticky.sticky-active [data-header-hover=light] {
 }
 
 header.sticky.sticky-active [data-header-hover=light] .navbar-nav .nav-link {
-  color: var(--dark-gray);
+  /* color: var(--dark-gray); */
+  color: white;
 }
 
 header.sticky.sticky-active [data-header-hover=light] .icon>a {
@@ -9188,7 +9192,7 @@ header .header-top-bar .header-icon .header-social-text ul li:last-child {
 header .left-nav .navbar-nav:before {
   height: 20px;
   width: 1px;
-  background-color: var(--medium-gray);
+  /* background-color: var(--medium-gray); */
   opacity: 0.5;
   content: "";
   -webkit-transform: translate(-7px, 0px);
@@ -9261,7 +9265,9 @@ header.sticky .navbar.disable-fixed {
   padding: 60px 0 65px;
   border: 0;
   top: 100%;
-  background-color: var(--white);
+
+  /* background-color: var(--white); */
+    background-color: black !important;
   box-shadow: 0 45px 45px 0 rgba(0, 0, 0, 0.05);
   -webkit-animation: hide-animation 0.5s;
   animation: hide-animation 0.5s;
@@ -24533,6 +24539,7 @@ main {
   color: #666;
 }
 
+
 /* =========================
    PRODUCT GRID (CLEAN)
 ========================= */
@@ -24760,18 +24767,37 @@ main {
   }
 }
 
+
+
 /* RESPONSIVE */
 @media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+/* change dropdown nav color */
+@media (max-width: 991px) {
+  /* all nav links in mobile menu */
+  #navbarNav .nav-link {
+    color: whitesmoke !important;
+  }
 
-@media (max-width: 900px) {
-  .product-grid {
+  /* optional: dropdown items too */
+  #navbarNav .dropdown-menu a {
+    color: whitesmoke !important;
+  }
+
+  /* optional: background for visibility (recommended) */
+  #navbarNav {
+    background: #000; /* or your brand color */
+  }
+    .product-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
 }
+
+
 
 @media (max-width: 600px) {
   .product-grid {
@@ -24779,8 +24805,5 @@ main {
   }
 }
 
-@media (max-width: 400px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
+

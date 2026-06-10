@@ -33,7 +33,7 @@
 
 <body data-mobile-nav-style="classic">
     <!-- start header -->
-    <header class="header-with-topbar">
+     <header class="header-with-topbar">
      
             <div
                 class="header-top-bar top-bar-light bg-black disable-fixed md-border-bottom border-color-transparent-dark-very-light">
@@ -65,14 +65,14 @@
                             </div>
                         </div>
                         <a class="navbar-brand" href="demo-fashion-store.html">
-                            <h1 class="fs-3 name-logo">Trendy</h1>
+                            <!-- <h1 class="fs-3 name-logo">Trendy</h1> -->
 
-                            <!-- <img src="images/demo-fashion-store-logo-black.png"
-                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="default-logo">
-                        <img src="images/demo-fashion-store-logo-black.png"
-                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="alt-logo">
-                        <img src="images/demo-fashion-store-logo-black.png"
-                            data-at2x="images/demo-fashion-store-logo-black@2x.png" alt="" class="mobile-logo"> -->
+                            <img src="/images/logo.png"
+                            data-at2x="/images/logo.png" alt="" class="default-logo">
+                        <img src="/images/logo.png"
+                            data-at2x="/images/logo.png" alt="" class="alt-logo">
+                        <img src="/images/logo.png"
+                            data-at2x="/images/logo.png" alt="" class="mobile-logo">
                         </a>
                     </div>
                     <div class="col-auto col-xxl-6 col-lg-8 menu-order">
@@ -120,10 +120,41 @@
                                     <a href="/contact" class="nav-link">Contact</a>
                                 </li>
                             </ul>
+                            <!-- MOBILE ONLY -->
+<ul class="navbar-nav d-lg-none mt-3">
+
+    <% if (isAuth) { %>
+        <li class="nav-item">
+            <a href="/profile" class="nav-link">Profile</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/logout" class="nav-link">Logout</a>
+        </li>
+
+    <% } else { %>
+
+        <li class="nav-item">
+            <a href="/login" class="nav-link">Login</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/register" class="nav-link">Signup</a>
+        </li>
+
+    <% } %>
+
+    <li class="nav-item">
+        <a href="/cart" class="nav-link">
+            Cart (<%= cartCount %>)
+        </a>
+    </li>
+
+</ul>
                         </div>
                     </div>
                     <div class="col-auto col-xxl-3 col-lg-2 text-end">
-                        <div class="header-icon">
+                        <div class="header-icon  d-none d-lg-flex">
                            
                             <div class="widget-text icon alt-font">
 
@@ -158,7 +189,6 @@
                 </div>
             </nav>
          </header> 
-
          <!-- helper function -->
 
 

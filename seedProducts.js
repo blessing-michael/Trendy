@@ -264,7 +264,7 @@ const seed = async () => {
 
         sizes: ["44", "46", "48", "50"],
 
-        colors: ["Black", "Wine"]
+        colors: ["peach"]
       },
 
       {
@@ -1400,6 +1400,7 @@ const seed = async () => {
 
         colors: ["white", "Black"]
       },
+
       {
         name: "td206",
 
@@ -1430,7 +1431,915 @@ const seed = async () => {
         sizes: ["S", "M", "L"],
 
         colors: ["wine", "Black"]
-      }
+      },
+      // modest
+      
+      
+      {
+        name: "M101",
+
+        category: "modest",
+
+        image: "/images/modest10.jpg",
+
+        images: [
+          "/images/m10.jpg",
+          "/images/m11.jpg"
+         
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest9.jpg",
+
+        images: [
+          "/images/modest9.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest3.jpg",
+
+        images: [
+          "/images/modest3.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/m177.jpg",
+
+        images: [
+          "/images/modest16.jpg",
+          "/images/m17.jpg",
+          "/images/modest17.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modes101.jpg",
+
+        images: [
+          "/images/modes101.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest18.jpg",
+
+        images: [
+          "/images/modest19.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest20.jpg",
+
+        images: [
+          "/images/m20.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest5.jpg",
+
+        images: [
+          "/images/modest5.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest6.jpg",
+
+        images: [
+          "/images/modest6.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest4.jpg",
+
+        images: [
+          "/images/modest4.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest12.jpg",
+
+        images: [
+          "/images/modest12.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest11.jpg",
+
+        images: [
+          "/images/modest11.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+
+      {
+        name: "M100",
+
+        category: "modest",
+
+        image: "/images/modest15.jpg",
+
+        images: [
+          "/images/m15.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      {
+        name: "M100",
+
+       
+        category: "modest",
+
+        image: "/images/classy60.png",
+
+        images: [
+          "/images/classy60.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M100",
+
+       
+        category: "modest",
+
+        image: "/images/classy61.png",
+
+        images: [
+          "/images/classy61.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      {
+        name: "M702",
+
+       
+        category: "classy",
+
+        image: "/images/classy60.png",
+
+        images: [
+          "/images/classy60.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 43500,
+
+        singlePrice: 0,
+
+        groupPrice: 43500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["Free size"],
+
+        colors: ["Blue", "Black"]
+      },
+      
+      {
+        name: "M703",
+
+       
+        category: "classy",
+
+        image: "/images/classy61.png",
+
+        images: [
+          "/images/classy61.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M701",
+
+       
+        category: "classy",
+
+        image: "/images/classy62.png",
+
+        images: [
+          "/images/classy62.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 43500,
+
+        singlePrice: 0,
+
+        groupPrice: 43500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["Free size"],
+
+       colors: ["wine", "Blue", "purple"]
+      },
+      {
+        name: "M700",
+
+       
+        category: "classy",
+
+        image: "/images/classy63.png",
+
+        images: [
+          "/images/classy63.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 54500,
+
+        singlePrice: 0,
+
+        groupPrice: 54500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["Free size"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M701",
+
+       
+        category: "modest",
+
+        image: "/images/classy62.png",
+
+        images: [
+          "/images/classy62.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M707",
+
+       
+        category: "classy",
+
+        image: "/images/classy68.jpg",
+
+        images: [
+          "/images/classy66.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 51500,
+
+        singlePrice: 0,
+
+        groupPrice: 51500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M708",
+
+       
+        category: "classy",
+
+        image: "/images/classy69.jpg",
+
+        images: [
+          "/images/classy69.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M709",
+
+       
+        category: "classy",
+
+        image: "/images/classy70.jpg",
+
+        images: [
+          "/images/classy70.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 52500,
+
+        singlePrice: 0,
+
+        groupPrice: 52500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M710",
+
+       
+        category: "classy",
+
+        image: "/images/classy66.jpg",
+
+        images: [
+          "/images/classy66.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 54500,
+
+        singlePrice: 0,
+
+        groupPrice: 54500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M711",
+
+       
+        category: "classy",
+
+        image: "/images/classy67.jpg",
+
+        images: [
+          "/images/classy67.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M712",
+
+       
+        category: "classy",
+
+        image: "/images/classy655.jpg",
+
+        images: [
+          "/images/classy65.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 54500,
+
+        singlePrice: 0,
+
+        groupPrice: 54500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["white", "Black"]
+      },
+      {
+        name: "M713",
+
+       
+        category: "classy",
+
+        image: "/images/classy71.jpg",
+
+        images: [
+          "/images/classy71.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M707",
+
+       
+        category: "classy",
+
+        image: "/images/classy61.png",
+
+        images: [
+          "/images/classy61.png"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["white", "Black"]
+      },
+      
 
     ]);
 

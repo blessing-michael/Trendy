@@ -9,6 +9,8 @@ const path = require("path");
 const http = require("http");
 const { Server } = require("socket.io");
 
+const Contact = require("./models/Contact");
+
 // const Order = require("/models/Order");
 
 const app = express();
@@ -119,6 +121,7 @@ app.set("view engine", "ejs");
 // Static
 app.use(express.static(path.join(__dirname, "public")));
 
+
 // Make session global
 app.use((req, res, next) => {
   res.locals.isAuth = req.session.isAuth || false;
@@ -202,6 +205,7 @@ app.get("/seed-products", async (req, res) => {
     res.send("Error seeding product");
   }
 });
+
 app.get("/trending", async (req, res) => {
   try {
 
@@ -713,7 +717,10 @@ if (!group) {
 
 // Register
 app.get("/register", (req, res) => {
-  res.render("register", { error: null });
+res.render("register", {
+    error: null,
+    success: req.query.success
+  });
 });
 
 app.post("/register", async (req, res) => {
@@ -903,6 +910,56 @@ io.on("connection", (socket) => {
 
     io.to(data.postId).emit("message", data);
   });
+});
+
+// modest
+app.get("/modest", async (req, res) => {
+  try {
+
+    const products = await Product.find({
+      category: "modest"
+    });
+
+    res.render("modest", {
+      products
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.send("Error loading modest products");
+  }
+});
+
+// contact
+
+
+// GET CONTACT PAGE
+app.get("/contact", (req, res) => {
+    res.render("contact", {
+        success: req.query.success,
+        error: req.query.error
+    });
+});
+
+// POST CONTACT FORM
+app.post("/contact", async (req, res) => {
+    try {
+        const { fullName, phone, email, subject, message } = req.body;
+
+        await Contact.create({
+            fullName,
+            phone,
+            email,
+            subject,
+            message
+        });
+
+        return res.redirect("/contact?success=true");
+
+    } catch (err) {
+        console.error(err);
+        return res.redirect("/contact?error=true");
+    }
 });
 
 /* -------- START SERVER -------- */
