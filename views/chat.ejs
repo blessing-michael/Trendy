@@ -204,6 +204,7 @@
   <textarea name="text" placeholder="What do you want to buy?" required></textarea>
   <button type="submit">Post</button>
 </form> -->
+
 <form action="/chat/create" method="POST" enctype="multipart/form-data">
 
   <input
@@ -234,11 +235,21 @@
   <div class="post-header">
     <%= post.creator.username %>
   </div>
+  
+    <!-- ✅ DELETE BUTTON GOES HERE -->
+  <!-- <% if (isAuth && post.creator._id.toString() === user._id.toString()) { %>
+    <form action="/chat/delete/<%= post._id %>" method="POST">
+      <button type="submit" style="color:red;">
+        Delete Post
+      </button>
+    </form>
+  <% } %> -->
 
   <!-- IMAGE -->
   <% if (post.image) { %>
     <div class="post-image">
-      <img src="<%= post.image %>">
+      <!-- <img src="<%= post.image %>"> -->
+       <img src="<%= post.image %>">
     </div>
   <% } %>
 
@@ -266,16 +277,18 @@
     </div>
 
     <!-- JOIN -->
-    <form action="/chat/join/<%= post._id %>" method="POST">
-      <select name="size" required>
-        <option value="">Size</option>
-        <option>10</option>
-        <option>12</option>
-        <option>14</option>
-        <option>16</option>
-      </select>
+    <form action="/chat/join/<%= post._id %>" method="POST" class="size-container">
+      <div class="join-fields">
+    <select name="size" required>
+      <option value="">Size</option>
+      <option>10</option>
+      <option>12</option>
+      <option>14</option>
+      <option>16</option>
+    </select>
 
-      <input name="location" placeholder="City" required>
+    <input name="location" placeholder="City" required>
+  </div>
 
       <button class="join-btn">Join Group</button>
     </form>
@@ -283,14 +296,70 @@
   </div>
 
   <!-- COMMENTS -->
-  <div class="post-content">
-    <% post.comments.forEach(c => { %>
-      <div class="comment">
-        <strong><%= c.user.username %></strong> <%= c.text %>
+<!-- COMMENTS -->
+<% post.comments.forEach(c => { %>
+
+  <div class="comment" id="comment-<%= c._id %>">
+
+    <!-- comment text -->
+    <strong><%= c.user.username %></strong>
+    <span><%= c.text %></span>
+
+    <!-- 3 dots menu (only for owner) -->
+    <% if (isAuth && c.user._id.toString() === user._id.toString()) { %>
+
+      <div class="comment-menu-wrapper">
+
+        <!-- DOT BUTTON -->
+        <button type="button" class="comment-menu-btn">⋯</button>
+
+        <!-- DROPDOWN -->
+        <div class="comment-menu-dropdown">
+
+          <!-- EDIT BUTTON -->
+          <button
+            type="button"
+            onclick="toggleEdit('<%= c._id %>')">
+            Edit
+          </button>
+
+          <!-- DELETE -->
+          <form action="/chat/comment/delete/<%= post._id %>/<%= c._id %>" method="POST">
+            <button type="submit" style="color:red;">
+              Delete
+            </button>
+          </form>
+
+        </div>
+
       </div>
-    <% }) %>
+
+    <% } %>
+
+    <!-- 👇 EDIT BOX (HIDDEN BY DEFAULT) -->
+    <div id="edit-<%= c._id %>" style="display:none; margin-top:8px;">
+
+      <form action="/chat/comment/edit/<%= post._id %>/<%= c._id %>" method="POST">
+
+        <input
+          type="text"
+          name="text"
+          value="<%= c.text %>"
+          required
+          style="width: 100%; padding: 6px;"
+        >
+
+        <button type="submit" style="margin-top:5px;">
+          Save
+        </button>
+
+      </form>
+
+    </div>
+
   </div>
 
+<% }) %>
   <!-- ADD COMMENT -->
 <form class="comment-form" action="/chat/comment/<%= post._id %>" method="POST">
 
@@ -317,7 +386,41 @@
 <script type="text/javascript" src="/js/main.js"></script>
 
 
+<script>
+document.querySelectorAll(".comment-menu-btn").forEach(btn => {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
 
+    const dropdown = this.nextElementSibling;
+
+    // close others
+    document.querySelectorAll(".comment-menu-dropdown").forEach(d => {
+      if (d !== dropdown) d.style.display = "none";
+    });
+
+    // toggle current
+    dropdown.style.display =
+      dropdown.style.display === "block" ? "none" : "block";
+  });
+});
+
+// close when clicking outside
+document.addEventListener("click", function () {
+  document.querySelectorAll(".comment-menu-dropdown").forEach(d => {
+    d.style.display = "none";
+  });
+});
+</script>
+<script>
+function toggleEdit(commentId) {
+  const box = document.getElementById("edit-" + commentId);
+
+  if (!box) return;
+
+  box.style.display =
+    box.style.display === "block" ? "none" : "block";
+}
+</script>
 
 
 

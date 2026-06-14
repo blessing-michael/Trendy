@@ -1923,6 +1923,39 @@ const seed = async () => {
       },
       
       {
+        name: "M100",
+
+       
+        category: "modest",
+
+        image: "/images/modest-10.jpg",
+
+        images: [
+          "/images/modest-10-10.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 52500,
+
+        singlePrice: 0,
+
+        groupPrice: 52500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["wine", "Black"]
+      },
+      
+      {
         name: "M702",
 
        
@@ -1936,11 +1969,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 43500,
+        price: 42000,
 
         singlePrice: 0,
 
-        groupPrice: 43500,
+        groupPrice: 42000,
 
         purchaseType: "hybrid",
 
@@ -2001,11 +2034,11 @@ const seed = async () => {
 
         description: "Trendy casual outfit",
 
-        price: 43500,
+        price: 42000,
 
         singlePrice: 0,
 
-        groupPrice: 43500,
+        groupPrice: 42000,
 
         purchaseType: "hybrid",
 
@@ -2308,15 +2341,15 @@ const seed = async () => {
         colors: ["Black"]
       },
       {
-        name: "M707",
+        name: "M713",
 
        
         category: "classy",
 
-        image: "/images/classy61.png",
+        image: "/images/modest26-26-26.png",
 
         images: [
-          "/images/classy61.png"
+           "/images/modest-26-26-26.png"
         ],
 
         description: "Trendy casual outfit",
@@ -2337,7 +2370,331 @@ const seed = async () => {
 
       sizes: ["44", "46", "48", "50"],
 
-        colors: ["white", "Black"]
+        colors: ["Black"]
+      },
+      {
+        name: "M21",
+
+       
+        category: "modest",
+
+        image: "/images/modest21.jpg",
+
+        images: [
+          "/images/m21.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M21",
+
+       
+        category: "modest",
+
+        image: "/images/modest-21-21.png",
+
+        images: [
+          "/images/m-21.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M21",
+
+       
+        category: "modest",
+
+        image: "/images/m-22-22-2.png",
+
+        images: [
+          "/images/m-21-21.png"
+        ],
+
+        description: "modest outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Blue", "white"]
+      },
+      {
+        name: "M21",
+
+       
+        category: "modest",
+
+        image: "/images/modest-23-3.png",
+
+        images: [
+         "/images/modest-23-3.png",
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      {
+        name: "M21",
+
+       
+        category: "modest",
+
+        image: "/images/m-22-2.png",
+
+        images: [
+         "/images/m-22-2.png",
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+     {
+        name: "C100",
+
+       
+        category: "classy",
+ 
+        image: "/images/C100.jpg",
+
+        images: [
+          "/images/C-100.jpg"
+        ],
+
+        description: "2 piece outfit",
+
+        price: 49500,
+
+        singlePrice: 0,
+
+        groupPrice: 49500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Brown"]
+      },
+      
+     {
+        name: "C101",
+
+       
+        category: "classy",
+ 
+        image: "/images/classy-40.png",
+
+        images: [
+         "/images/classy-40.png",
+        ],
+
+        description: "2 piece outfit",
+
+        price: 50500,
+
+        singlePrice: 0,
+
+        groupPrice: 50500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["red"]
+      },
+      
+     {
+        name: "C102",
+
+       
+        category: "classy",
+ 
+        image: "/images/classy-42.png",
+
+        images: [
+          "/images/classy-42.png",
+        ],
+
+        description: "2 piece outfit",
+
+        price: 50500,
+
+        singlePrice: 0,
+
+        groupPrice: 50500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["white"]
+      },
+      
+     {
+        name: "C103",
+
+       
+        category: "classy",
+ 
+        image: "/images/classy-39.png",
+
+        images: [
+        "/images/classy-39.png",
+        ],
+
+        description: "2 piece outfit",
+
+        price: 48500,
+
+        singlePrice: 0,
+
+        groupPrice: 48500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
+      },
+      
+     {
+        name: "C104",
+
+       
+        category: "classy",
+ 
+        image: "/images/classy-12.png",
+
+        images: [
+        "/images/classy-12.png",
+        ],
+
+        description: "2 piece outfit",
+
+        price: 42500,
+
+        singlePrice: 0,
+
+        groupPrice: 42500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+      sizes: ["44", "46", "48", "50"],
+
+        colors: ["Black"]
       },
       
 

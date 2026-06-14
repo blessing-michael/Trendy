@@ -8,6 +8,7 @@ const MongoDBSession = require("connect-mongodb-session")(session);
 const path = require("path");
 const http = require("http");
 const { Server } = require("socket.io");
+// const upload = require("./middleware/upload");
 
 const Contact = require("./models/Contact");
 
@@ -29,20 +30,32 @@ const Order = require("./models/Order");
 // const mongoURI = "mongodb://localhost:27017/sessions";
 const mongoURI = process.env.MONGO_URI;
 // IMAGE STORAGE
+// const multer = require("multer");
+
+
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, path.join(__dirname, "public", "uploads"));
+//   },
+
+//   filename: function (req, file, cb) {
+//     cb(null, Date.now() + "-" + file.originalname);
+//   }
+// });
 const multer = require("multer");
-// const path = require("path");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require("./config/cloud");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, "public", "uploads"));
-  },
-
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "posts",
+    allowed_formats: ["jpg", "png", "jpeg"]
   }
 });
 
 const upload = multer({ storage });
+// const upload = multer({ storage });
 
 // Connect MongoDB
 mongoose.connect(mongoURI)
@@ -241,6 +254,7 @@ app.get("/trending", async (req, res) => {
 //   const posts = await Post.find().populate("members");
 //   res.render("feed", { posts });
 // });
+
 app.get("/feed", async (req, res) => {
   const posts = await Post.find().populate("members");
 
@@ -258,24 +272,27 @@ app.get("/chat", async (req, res) => {
     .populate("comments.user")
     .sort({ createdAt: -1 });
 
-  res.render("chat", { posts });
+  res.render("chat", {
+    posts,
+    user: req.session.user,
+    isAuth: !!req.session.user
+  });
 });
-
 // post
 app.post("/chat/create", upload.single("image"), async (req, res) => {
+  console.log(req.file);
 
   if (!req.session.user) return res.redirect("/login");
 
   const post = new Post({
     text: req.body.text,
-    image: req.file ? "/uploads/" + req.file.filename : "",
+    image: req.file ? req.file.path : "",
     creator: req.session.user._id
   });
 
   await post.save();
 
   res.redirect("/chat");
-
 });
 // app.post("/chat/create", async (req, res) => {
 //   if (!req.session.user) return res.redirect("/login");
@@ -302,6 +319,85 @@ app.post("/chat/comment/:postId", async (req, res) => {
   });
 
   await post.save();
+  res.redirect("/chat");
+});
+// delete comment 
+app.post("/chat/comment/delete/:postId/:commentId", async (req, res) => {
+  if (!req.session.user) return res.redirect("/login");
+
+  const post = await Post.findById(req.params.postId);
+
+  if (!post) return res.redirect("/chat");
+
+  const comment = post.comments.id(req.params.commentId);
+
+  if (!comment) return res.redirect("/chat");
+
+  if (comment.user.toString() !== req.session.user._id.toString()) {
+    return res.status(403).send("Not allowed");
+  }
+
+  // ✅ FIX: remove manually
+  post.comments = post.comments.filter(
+    c => c._id.toString() !== req.params.commentId
+  );
+
+  await post.save();
+
+  res.redirect("/chat");
+});
+app.post("/chat/comment/edit/:postId/:commentId", async (req, res) => {
+   console.log("EDIT ROUTE HIT");
+  console.log("Comment ID:", req.params.commentId);
+  console.log("New text:", req.body.text);
+  
+  try {
+    
+    if (!req.session.user) return res.redirect("/login");
+
+    const post = await Post.findById(req.params.postId);
+    if (!post) return res.redirect("/chat");
+
+    const comment = post.comments.id(req.params.commentId);
+    console.log("FOUND COMMENT:", comment);
+    if (!comment) return res.redirect("/chat");
+
+    // ownership check
+    if (comment.user.toString() !== req.session.user._id.toString()) {
+      return res.status(403).send("Not allowed");
+    }
+
+    // 🔥 FIX: ensure text exists
+    if (!req.body.text || req.body.text.trim() === "") {
+      return res.redirect("/chat");
+    }
+
+    comment.text = req.body.text;
+    await post.save();
+
+    res.redirect("/chat");
+
+  } catch (err) {
+    console.log(err);
+    res.send("Edit error");
+  }
+});
+// delete post
+
+app.post("/chat/delete/:postId", async (req, res) => {
+  if (!req.session.user) return res.redirect("/login");
+
+  const post = await Post.findById(req.params.postId);
+
+  if (!post) return res.redirect("/chat");
+
+  // ONLY creator can delete
+  if (post.creator.toString() !== req.session.user._id.toString()) {
+    return res.status(403).send("Not allowed");
+  }
+
+  await Post.findByIdAndDelete(req.params.postId);
+
   res.redirect("/chat");
 });
 // group buy
@@ -811,37 +907,37 @@ app.get("/logout", (req, res) => {
   req.session.destroy(() => res.redirect("/login"));
 });
 
+// cloudinary
+app.post("/upload", upload.single("image"), (req, res) => {
+
+  console.log(req.file.path);
+
+  res.json({
+    imageUrl: req.file.path
+  });
+
+});
+
 /* -------- POSTS -------- */
 
 // Create post
-// app.post("/create", async (req, res) => {
-//   if (!req.session.user) return res.redirect("/login");
 
-//   const post = new Post({
-//     image: req.body.image,
-//     text: req.body.text,
-//     createdBy: req.session.user._id,
-//     members: [req.session.user._id],
-//   });
-
-//   await post.save();
-//   res.redirect("/feed");
-// });
-app.post("/create", async (req, res) => {
+app.post("/create", upload.single("image"), async (req, res) => {
   try {
     if (!req.session.user) return res.redirect("/login");
 
     const post = new Post({
-      image: req.body.image,
       text: req.body.text,
-      creator: req.session.user._id, // ✅ consistent naming
-      members: [req.session.user._id], // ✅ creator joins
-      groupSize: 4 // ✅ important
+      image: req.file ? req.file.path : "",
+      creator: req.session.user._id,
+      members: [req.session.user._id],
+      groupSize: 4
     });
 
     await post.save();
 
     res.redirect("/feed");
+
   } catch (err) {
     console.log(err);
     res.send("Error creating post");

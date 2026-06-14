@@ -1295,6 +1295,54 @@ body{
     background: #c40f3a;
 }
 
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.size-container{
+    display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.join-fields {
+  display: flex;
+  gap: 10px;
+  flex: 2;
+}
+
+.join-btn {
+  flex: 1;
+}
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ccc;   /* visible border */
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+}
+
+.comment-form input:focus {
+  border-color: #000;
+}
+
+.comment-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
 /* =========================
    RESPONSIVE (VERY IMPORTANT)
 ========================= */
