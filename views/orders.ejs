@@ -46,7 +46,7 @@
                 <div class="container-fluid">
                     <div class="row h-40px align-items-center m-0">
                         <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
-                            <div class="text-green">Enjoy the cheapest prices on all styles.</div>
+                            <div class="text-green">Buy authentic Turkish clothing at wholesale rates. Simply join a buying group and unlock massive savings on every style.</div>
                             <a href="#" class="text-green fw-600 ms-5px text-hover"><span
                                     class="text-decoration-line-bottom">Shop now</span></a>
                         </div>
@@ -120,6 +120,7 @@
                                         <li><a href="/checkout">Checkout</a></li>
                                         <li><a href="/">Big sizes</a></li>
                                         <li><a href="/trending">Small sizes</a></li>
+                                        <li><a href="/modest">Modest Collection</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -255,9 +256,52 @@
         <%= new Date(order.createdAt).toDateString() %>
       </div>
 
+
+      <!-- tracking start -->
+   <!-- tracking start -->
+<% if (order.tracking && order.tracking.length > 0) { %>
+
+<h6 style="margin-top:15px;">Tracking</h6>
+
+<div class="tracking-timeline">
+
+  <% order.tracking.forEach((t, index) => { %>
+
+    <div class="tracking-step">
+
+      <div class="dot <%= index === order.tracking.length - 1 ? 'active' : '' %>"></div>
+
+      <div class="tracking-content">
+
+        <h4><%= t.status %></h4>
+        <p><%= t.location %></p>
+        <small><%= t.note %></small>
+        <br>
+        <small><%= new Date(t.date).toDateString() %></small>
+
+      </div>
+
     </div>
 
   <% }) %>
+
+</div>
+
+<% } else { %>
+
+<p style="margin-top:15px; color:#777;">
+  No tracking updates yet.
+</p>
+
+<% } %>
+<!-- tracking end -->
+
+      <!-- tracking end -->
+
+    </div>
+
+  <% }) %>
+  
 
 </div>
 

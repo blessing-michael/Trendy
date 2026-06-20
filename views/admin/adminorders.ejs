@@ -1,0 +1,55 @@
+<h1>All Orders</h1>
+
+<% orders.forEach(order => { %>
+
+  <div style="border:1px solid #ccc; padding:15px; margin-bottom:10px;">
+
+    <h3>Order ID: <%= order._id %></h3>
+
+    <p><strong>Name:</strong> <%= order.fullname %></p>
+    <p><strong>Phone:</strong> <%= order.phone %></p>
+    <p><strong>Total:</strong> ₦<%= order.total %></p>
+
+    <p><strong>Status:</strong> <%= order.status || "Pending" %></p>
+
+    <hr>
+
+    <h4>Items:</h4>
+
+    <% order.items.forEach(item => { %>
+      <p>
+        <%= item.name %> x <%= item.quantity %>
+      </p>
+    <% }) %>
+    <form action="/admin/adminorders/<%= order._id %>/status" method="POST">
+
+  <select name="status">
+    <option>Pending</option>
+    <option>Processing</option>
+    <option>Shipped</option>
+    <option>Out for Delivery</option>
+    <option>Delivered</option>
+  </select>
+
+  <button>Update</button>
+
+</form>
+<!-- TRACKING FORM (NOW CORRECT LOCATION) -->
+    <h4>Add Tracking Update</h4>
+
+    <form action="/admin/adminorders/<%= order._id %>/tracking" method="POST">
+
+      <input type="text" name="status" placeholder="Status" required>
+      <input type="text" name="location" placeholder="Location" required>
+      <input type="text" name="note" placeholder="Note" required>
+
+      <button type="submit">Add Update</button>
+
+    </form>
+
+    <hr>
+
+  </div>
+  
+
+<% }) %>

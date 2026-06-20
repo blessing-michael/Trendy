@@ -29,10 +29,39 @@ const orderSchema = new mongoose.Schema({
   city: String,
   notes: String,
 
+  // status: {
+  //   type: String,
+  //   default: "Pending"
+  // }
   status: {
-    type: String,
-    default: "Pending"
+  type: String,
+  default: "Pending"
+},
+
+trackingNumber: {
+  type: String
+},  
+tracking: [
+  {
+    status: String,
+    location: String,
+    note: String,
+    date: { type: Date, default: Date.now }
   }
+]
+
+
+// tracking: [
+//   {
+//     status: String,
+//     date: {
+//       type: Date,
+//       default: Date.now
+//     }
+//   },
+
+  
+// ]
 
 }, { timestamps: true });
 

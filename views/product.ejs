@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/feed.css" />
     <link rel="stylesheet" href="/css/responsive.css" />
+    <link rel="stylesheet" href="/css/product.css" />
     <link rel="stylesheet" href="/demos/fashion-store/fashion-store.css" />
+     <link rel="stylesheet" href="/css/trendy.css">
     <!-- Font Awesome 6 (latest) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
@@ -33,14 +35,14 @@
 
 <body data-mobile-nav-style="classic">
     <!-- start header -->
-     <header class="header-with-topbar">
+      <header class="header-with-topbar">
      
             <div
                 class="header-top-bar top-bar-light bg-black disable-fixed md-border-bottom border-color-transparent-dark-very-light">
                 <div class="container-fluid">
                     <div class="row h-40px align-items-center m-0">
                         <div class="col-12 justify-content-center alt-font fs-13 fw-500 text-uppercase">
-                            <div class="text-green">Enjoy the cheapest prices on all styles.</div>
+                            <div class="text-green">Buy authentic Turkish clothing at wholesale rates. Simply join a buying group and unlock massive savings on every style.</div>
                             <a href="#" class="text-green fw-600 ms-5px text-hover"><span
                                     class="text-decoration-line-bottom">Shop now</span></a>
                         </div>
@@ -114,6 +116,7 @@
                                         <li><a href="/checkout">Checkout</a></li>
                                         <li><a href="/">Big sizes</a></li>
                                         <li><a href="/trending">Small sizes</a></li>
+                                        <li><a href="/modest">Modest Collection</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -189,6 +192,7 @@
                 </div>
             </nav>
          </header> 
+
          <!-- helper function -->
 
 
@@ -357,8 +361,112 @@
         </form>
 
     </div>
+    
 
 </section>
+
+<div  class="related-wrapper">
+    <% if (relatedProducts.length > 0) { %>
+
+<h2>You May Also Like</h2>
+
+<div class="product-grid">
+
+    <% relatedProducts.forEach(product => { %>
+
+        <div class="product-card">
+
+            <a href="/product/<%= product._id %>">
+                <img src="<%= product.image %>" loading="lazy">
+            </a>
+
+            <h4><%= product.name %></h4>
+
+        </div>
+
+    <% }) %>
+
+</div>
+
+<% } %>
+
+<!--  -->
+<% if (product.category !== "trendy" && trendyProducts.length > 0) { %>
+
+<h2>✨ Discover Our Trendy Collection</h2>
+
+<div class="product-grid">
+
+    <% trendyProducts.forEach(product => { %>
+
+        <div class="product-card">
+
+            <a href="/product/<%= product._id %>">
+                <img src="<%= product.image %>" loading="lazy">
+            </a>
+
+            <h4><%= product.name %></h4>
+
+        </div>
+
+    <% }) %>
+
+</div>
+
+<% } %>
+<!--  -->
+<% if (product.category !== "modest" && modestProducts.length > 0) { %>
+
+<h2>🌸 Explore Elegant Modest Styles</h2>
+
+<div class="product-grid">
+
+    <% modestProducts.forEach(product => { %>
+
+        <div class="product-card">
+
+            <a href="/product/<%= product._id %>">
+                <img src="<%= product.image %>" loading="lazy">
+            </a>
+
+            <h4><%= product.name %></h4>
+
+        </div>
+
+    <% }) %>
+
+</div>
+
+<% } %>
+<!-- start -->
+
+<% if (product.category !== "classy" && classyProducts.length > 0) { %>
+
+<h2>👗 Complete Your Look with Classy Picks</h2>
+
+<div class="product-grid">
+
+    <% classyProducts.forEach(product => { %>
+
+        <div class="product-card">
+
+            <a href="/product/<%= product._id %>">
+                <img src="<%= product.image %>" loading="lazy">
+            </a>
+
+            <h4><%= product.name %></h4>
+
+        </div>
+
+    <% }) %>
+
+</div>
+
+<% } %>
+<!-- end -->
+</div>
+
+
 
 
 

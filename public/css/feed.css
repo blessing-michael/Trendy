@@ -906,6 +906,7 @@ body{
     background:#f5f5f5;
     font-size:22px;
     cursor:pointer;
+    color: #000;
 }
 
 .qty-box input{
@@ -1343,6 +1344,7 @@ body{
   font-size: 14px;
   font-weight: 600;
 }
+/* product.ejs */
 /* =========================
    RESPONSIVE (VERY IMPORTANT)
 ========================= */

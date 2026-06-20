@@ -75,4 +75,44 @@
     .price {
       font-weight: bold;
     }
+
+    .tracking-timeline {
+  margin-top: 15px;
+  border-left: 2px solid #ddd;
+  padding-left: 20px;
+}
+
+.tracking-step {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.tracking-step .dot {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  left: -28px;
+  top: 5px;
+}
+/* tracking */
+.tracking-step .dot.active {
+  background: green;
+}
+
+.tracking-content h4 {
+  margin: 0;
+  font-size: 15px;
+  color: #222;
+}
+
+.tracking-content p {
+  margin: 3px 0;
+  color: #666;
+}
+
+.tracking-content small {
+  color: #999;
+}
   

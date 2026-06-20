@@ -85,6 +85,111 @@ app.use(
     store: store,
   })
 );
+// admin
+// function isAdmin(req, res, next) {
+
+//     if (!req.session.user) {
+//         return res.redirect("/login");
+//     }
+
+//     if (!req.session.user.isAdmin) {
+//         return res.status(403).send("Access denied");
+//     }
+
+//     next();
+
+// }
+function isAdmin(req, res, next) {
+
+    if (!req.session.user) {
+        return res.redirect("/login");
+    }
+
+    UserModel.findById(req.session.user._id)
+        .then(user => {
+
+            if (!user || !user.isAdmin) {
+                return res.status(403).send("Access denied");
+            }
+
+            next();
+
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).send("Server error");
+        });
+}
+app.get("/admindashboard", isAdmin, async (req, res) => {
+
+    const totalOrders = await Order.countDocuments();
+
+    const totalProducts = await Product.countDocuments();
+
+    const totalUsers = await UserModel.countDocuments();
+
+    res.render("admin/admindashboard", {
+
+        totalOrders,
+
+        totalProducts,
+
+        totalUsers
+
+    });
+
+});
+app.get("/admin/adminorders", isAdmin, async (req, res) => {
+
+  const orders = await Order.find()
+    .populate("userId")
+    .populate("items.productId")
+    .sort({ createdAt: -1 });
+
+  res.render("admin/adminorders", { orders });
+
+});
+app.post("/admin/adminorders/:id/status", isAdmin, async (req, res) => {
+
+  await Order.findByIdAndUpdate(req.params.id, {
+    status: req.body.status
+  });
+
+  res.redirect("/admin/adminorders");
+
+});
+
+// app.post("/admin/adminorders/:id/tracking", isAdmin, async (req, res) => {
+
+//   const order = await Order.findById(req.params.id);
+
+//   order.tracking.push({
+//     status: req.body.status,
+//     location: req.body.location,
+//     note: req.body.note
+//   });
+
+//   await order.save();
+
+//   res.redirect("/admin/adminorders");
+
+// });
+app.post("/admin/adminorders/:id/tracking", isAdmin, async (req, res) => {
+
+  const order = await Order.findById(req.params.id);
+
+  if (!order) return res.redirect("/admin/adminorders");
+
+  order.tracking.push({
+    status: req.body.status,
+    location: req.body.location,
+    note: req.body.note
+  });
+
+  await order.save();
+
+  res.redirect("/admin/adminorders");
+});
 
 // cart count
 app.use(async (req, res, next) => {
@@ -777,38 +882,105 @@ app.get("/product/:id", async (req, res) => {
     }
 
     // FIND OPEN GROUP
-    //  const group = await GroupBuy.findOne({
-    //   productId: product._id,
-    //  status: "open"
-    // });
     let group = await GroupBuy.findOne({
-  productId: product._id,
-  status: "open"
-});
+      productId: product._id,
+      status: "open"
+    });
 
-// TEMP FAKE DATA FOR TESTING UI
-if (!group) {
+    // TEMP FAKE DATA FOR TESTING UI
+    if (!group) {
+      group = {
+        members: [1],
+        status: "open"
+      };
+    }
 
-  group = {
-    members: [1],
-    status: "open"
-  };
+    // ===========================
+    // RELATED PRODUCTS
+    // ===========================
 
-}
+    // Same category (excluding current product)
+    const relatedProducts = await Product.find({
+      category: product.category,
+      _id: { $ne: product._id }
+    }).limit(5);
+
+    // Classy
+    const classyProducts = await Product.find({
+      category: "classy",
+      _id: { $ne: product._id }
+    }).limit(5);
+
+    // Trendy
+    const trendyProducts = await Product.find({
+      category: "trendy",
+      _id: { $ne: product._id }
+    }).limit(5);
+
+    // Modest
+    const modestProducts = await Product.find({
+      category: "modest",
+      _id: { $ne: product._id }
+    }).limit(5);
 
     res.render("product", {
       product,
-      group
+      group,
+
+      relatedProducts,
+      classyProducts,
+      trendyProducts,
+      modestProducts
     });
 
   } catch (err) {
 
     console.log(err);
-
     res.send("Product page error");
+
   }
 
 });
+
+// app.get("/product/:id", async (req, res) => {
+
+//   try {
+
+//     const product = await Product.findById(req.params.id);
+
+//     if (!product) {
+//       return res.redirect("/");
+//     }
+//     let group = await GroupBuy.findOne({
+//   productId: product._id,
+//   status: "open",
+  
+  
+// });
+
+// TEMP FAKE DATA FOR TESTING UI
+// if (!group) {
+
+//   group = {
+//     members: [1],
+//     status: "open"
+//   };
+
+// }
+
+//     res.render("product", {
+//       product,
+//       group
+//     });
+
+//   } catch (err) {
+
+//     console.log(err);
+
+//     res.send("Product page error");
+//   }
+
+// });
 /* -------- AUTH -------- */
 
 // Register
