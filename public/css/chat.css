@@ -153,3 +153,8 @@ color: white;
 .comment-menu-dropdown button:hover {
   background: #f2f2f2;
 }
+
+
+textarea {
+    color: #000 !important;
+}

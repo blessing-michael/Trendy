@@ -11,7 +11,7 @@ body{
 }
 
 /* PAGE */
-.container{
+.cart-container{
     width:95%;
     max-width:1300px;
     margin:auto;
