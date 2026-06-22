@@ -195,9 +195,12 @@ app.post("/admin/adminorders/:id/tracking", isAdmin, async (req, res) => {
 app.use(async (req, res, next) => {
   try {
     if (req.session.user) {
-      const user = await UserModel.findById(req.session.user._id);
+  const user = await UserModel.findById(req.session.user._id)
+  .populate("cart.productId");
 
-   res.locals.cartCount = user.cart.length;
+const validCart = user.cart.filter(item => item.productId);
+
+res.locals.cartCount = validCart.length;
 
     } else {
       res.locals.cartCount = 0;
@@ -581,6 +584,35 @@ app.post("/chat/join/:postId", async (req, res) => {
 });
 
 // cart
+
+// app.get("/cart", async (req, res) => {
+//   try {
+//     if (!req.session.user) {
+//       return res.redirect("/login");
+//     }
+
+//     const user = await UserModel.findById(req.session.user._id)
+//       .populate("cart.productId");
+
+//     const validCart = user.cart.filter(item => item.productId);
+    
+
+//     const total = validCart.reduce((sum, item) => {
+//       return sum + (item.productId.price || 0) * item.quantity;
+//     }, 0);
+
+//     res.render("cart", {
+//       cart: validCart,
+//       total,
+//       added: req.query.added === "1" 
+//     });
+
+//   } catch (err) {
+//     console.log("CART ERROR:", err);
+//     res.send("Cart page error");
+//   }
+  
+// });
 app.get("/cart", async (req, res) => {
   try {
     if (!req.session.user) {
@@ -591,6 +623,11 @@ app.get("/cart", async (req, res) => {
       .populate("cart.productId");
 
     const validCart = user.cart.filter(item => item.productId);
+    // Remove invalid items permanently
+if (validCart.length !== user.cart.length) {
+  user.cart = validCart;
+  await user.save();
+}
 
     const total = validCart.reduce((sum, item) => {
       return sum + (item.productId.price || 0) * item.quantity;
@@ -599,7 +636,7 @@ app.get("/cart", async (req, res) => {
     res.render("cart", {
       cart: validCart,
       total,
-      added: req.query.added === "1" // ✅ IMPORTANT FIX
+      added: req.query.added === "1"
     });
 
   } catch (err) {

@@ -645,6 +645,224 @@ const seed = async () => {
       // TRENDY PRODUCTS
 
       {
+        name: "td215",
+
+        category: "trendy",
+
+        image: "/images/td440.jpg",
+
+        images: [
+          "/images/td449.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "wine",  "brown"]
+      },
+      {
+        name: "td216",
+
+        category: "trendy",
+
+        image: "/images/td-444.jpeg",
+
+        images: [
+          "/images/td444-1.jpeg",
+          "/images/td444-2.jpeg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      {
+        name: "td217",
+
+        category: "trendy",
+
+        image: "/images/td447.jpeg",
+
+        images: [
+          "/images/td447-1.jpeg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      {
+        name: "td219",
+
+        category: "trendy",
+
+        image: "/images/td-446-1.jpg",
+
+        images: [
+          "/images/td-446.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["Brown", "Black"]
+      },
+      {
+        name: "td220",
+
+        category: "trendy",
+
+        image: "/images/trend.jpg",
+
+        images: [
+          "/images/trend.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["Pink", "Black"]
+      },
+      {
+        name: "td221",
+
+        category: "trendy",
+
+        image: "/images/td448.jpg",
+
+        images: [
+          "/images/td448.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["Pink", "Black"]
+      },
+      {
+        name: "td222",
+
+        category: "trendy",
+
+        image: "/images/td399.jpg",
+
+        images: [
+          "/images/td399.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 49000,
+
+        singlePrice: 0,
+
+        groupPrice: 49000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["Pink", "Black"]
+      },
+      {
         name: "td101",
 
         category: "trendy",

@@ -12,7 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const trendingProducts = [
       {
     type: "image",
-    image: "/images/trend.jpg",
+    image: "/images/td447.jpeg",
+    name: "2-Piece Set",
+    price: "₦48,000"
+  },
+      {
+    type: "image",
+    image: "/images/td-444.jpeg",
     name: "2-Piece Set",
     price: "₦48,000"
   },
