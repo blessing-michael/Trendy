@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { image: "/images/trend.jpg", name: "2-Piece Set", price: "₦48,000" },
     { image: "/images/trend-2-2.jpg", name: "Ruched Dress", price: "₦54,000" },
         {
-    type: "video",
+    type: "video",preload="auto",
     video: "/images/trend-vid1.mp4",
     name: "New Collection",
     price: "Watch Now"
