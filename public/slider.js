@@ -26,11 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     { image: "/images/trend.jpg", name: "2-Piece Set", price: "₦48,000" },
     { image: "/images/trend-2-2.jpg", name: "Ruched Dress", price: "₦54,000" },
         {
-    type: "video",preload="auto",
-    video: "/images/trend-vid1.mp4",
-    name: "New Collection",
-    price: "Watch Now"
-  },
+  type: "video",
+  preload: "auto",
+  video: "/images/trend-vid1.mp4",
+  name: "New Collection",
+  price: "Watch Now"
+},
     { image: "/images/trend3.jpg", name: "Summer Set", price: "₦42,000" },
     { image: "/images/td399.jpg", name: "Summer Set", price: "₦28,500" },
            {
@@ -90,12 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
     if (product.type === "video") {
 
   card.innerHTML = `
-    <video autoplay muted loop playsinline>
-      <source src="${product.video}" type="video/mp4">
-    </video>
-    <p>${product.name}</p>
-    <span>${product.price}</span>
-  `;
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="${product.preload || 'metadata'}"
+  >
+    <source src="${product.video}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <p>${product.name}</p>
+  <span>${product.price}</span>
+`;
 
 } else {
 
