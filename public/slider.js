@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
   type: "video",
   preload: "auto",
-  video: "/images/trend-vid1.mp4",
+  video: "/images/trend-vid1.MP4",
   name: "New Collection",
   price: "Watch Now"
 },
@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   card.innerHTML = `
   <video
+    controls
     autoplay
     muted
     loop
