@@ -1018,6 +1018,14 @@ app.get("/product/:id", async (req, res) => {
 //   }
 
 // });
+
+app.get("/wedding", async (req, res) => {
+    const products = await Product.find({ category: "wedding" });
+
+    res.render("wedding", {
+        products
+    });
+});
 /* -------- AUTH -------- */
 
 // Register

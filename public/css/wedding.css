@@ -1,0 +1,188 @@
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fff;
+}
+
+
+/* HERO */
+
+.wedding-hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    margin-top: 5rem;
+}
+.wedding-hero video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    object-position:center 5%;
+}
+/* .wedding-hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+} */
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.35);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+    text-align:center;
+}
+
+.hero-overlay h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero-overlay p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+
+    display:inline-block;
+
+    background:#fff;
+
+    color:#000;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+
+/* COLLECTION */
+
+.collection{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:80px 20px;
+
+}
+
+.collection h2{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+}
+
+
+.product-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.product-card img{
+
+    width:100%;
+
+    aspect-ratio:3/4;
+
+    object-fit:cover;
+
+}
+
+
+.product-info{
+
+    padding:20px;
+
+}
+
+
+.product-info h3{
+
+    margin:0 0 10px;
+
+}
+
+
+.price{
+
+    font-weight:bold;
+
+    color:#000;
+
+    margin-bottom:20px;
+
+}
+
+
+.view-btn{
+
+    display:inline-block;
+
+    background:#000;
+
+    color:#fff;
+
+    padding:10px 20px;
+
+    text-decoration:none;
+
+    border-radius:6px;
+
+}
+
+
+.empty{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:80px;
+
+}

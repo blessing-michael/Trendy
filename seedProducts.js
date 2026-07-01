@@ -30,7 +30,7 @@ const seed = async () => {
           "/images/cloth-black-opal.png",
         ],
 
-        description: "Elegant for classy outings.",
+        description: "Elegant for classy outings.(single  buy available)",
 
         price: 89500,
 
@@ -800,6 +800,337 @@ const seed = async () => {
 
         colors: ["Pink", "Black"]
       },
+      // wedding gown begins
+      {
+        name: "wd220",
+
+        category: "wedding",
+
+        image: "/images/wed1.png",
+    // Main product video
+    video: "/images/wed-vd2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd221",
+
+        category: "wedding",
+
+        image: "/images/wed3.jpg",
+    // Main product video
+    video: "/images/wed3-vid.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd222",
+
+        category: "wedding",
+
+        image: "/images/wed4.jpg",
+    // Main product video
+    video: "/images/wed-vd2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd223",
+
+        category: "wedding",
+
+        image: "/images/wed5.jpg",
+    // Main product video
+    video: "/images/wed5-vid2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd224",
+
+        category: "wedding",
+
+        image: "/images/wed10.jpg",
+    // Main product video
+    // video: "/images/wed-vd2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd227",
+
+        category: "wedding",
+
+        image: "/images/wed11.png",
+    // Main product video
+    video: "/images/wed11-vid.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd226",
+
+        category: "wedding",
+
+        image: "/images/wed12.png",
+    // Main product video
+    video: "/images/wed12-vid.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd228",
+
+        category: "wedding",
+
+        image: "/images/wed13.png",
+    // Main product video
+    video: "/images/wed12-vid.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd220",
+
+        category: "wedding",
+
+        image: "/images/wed1.png",
+    // Main product video
+    video: "/images/wed-vd2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd220",
+
+        category: "wedding",
+
+        image: "/images/wed1.png",
+    // Main product video
+    video: "/images/wed-vd2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
+      {
+        name: "wd220",
+
+        category: "wedding",
+
+        image: "/images/wed1.png",
+    // Main product video
+    video: "/images/wed-vd2.mp4",
+
+
+        description: "Trendy casual outfit",
+
+        price: 320,
+
+        singlePrice: 0,
+
+        groupPrice: 0,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["38","40","42","44","46","48","50"],
+
+        colors: ["available in many colors", "white"]
+      },
       {
         name: "td221",
 
@@ -862,24 +1193,26 @@ const seed = async () => {
 
         colors: ["Pink", "Black"]
       },
+      
       {
         name: "td101",
 
         category: "trendy",
 
-        image: "/images/trend.jpg",
+        image: "/images/td66-3.jpg",
 
         images: [
-          "/images/trend.jpg"
+          "/images/td66-1.jpg",
+          "/images/td66.jpg"
         ],
 
         description: "Trendy casual outfit",
 
-        price: 49000,
+        price: 36000,
 
         singlePrice: 0,
 
-        groupPrice: 49000,
+        groupPrice: 36000,
 
         purchaseType: "hybrid",
 
@@ -891,7 +1224,39 @@ const seed = async () => {
 
         sizes: ["S", "M", "L"],
 
-        colors: ["Pink", "Black"]
+        colors: ["Pink", "white"]
+      },
+
+      {
+        name: "td101",
+
+        category: "trendy",
+
+        image: "/images/td65.jpg",
+
+        images: [
+          "/images/td65.jpg"
+        ],
+
+        description: "Trendy casual outfit",
+
+        price: 36000,
+
+        singlePrice: 0,
+
+        groupPrice: 36000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: [ "wine"]
       },
       {
         name: "td102",
@@ -1910,6 +2275,7 @@ const seed = async () => {
         images: [
           "/images/trend52.png"
         ],
+         
 
         description: "Trendy casual outfit",
 
@@ -1930,6 +2296,38 @@ const seed = async () => {
         sizes: ["S", "M", "L"],
 
         colors: ["white", "Black"]
+      },
+      {
+        name: "td267",
+
+        category: "trendy",
+
+        image: "/images/td64.png",
+
+        images: [
+          "/images/td64.png"
+        ],
+          video: "/images/td64-vid.MOV",
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 6,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white"]
       },
 
       {
@@ -2033,7 +2431,7 @@ const seed = async () => {
       },
       
       {
-        name: "M100",
+        name: "M169",
 
         category: "modest",
 
@@ -2042,6 +2440,209 @@ const seed = async () => {
         images: [
           "/images/modest3.jpg"
         ],
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      
+      {
+        name: "M170",
+
+        category: "modest",
+
+        image: "/images/modest70.jpg",
+
+        images: [
+          "/images/modest70-1.jpg"
+        ],
+          // Main product video
+    video: "/images/modest70-vid.mp4",
+
+        description: "Trendy casual outfit",
+
+        price: 62000,
+
+        singlePrice: 0,
+
+        groupPrice: 62000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["dark blue", "faded blue"]
+      },
+      
+      
+      {
+        name: "M172",
+
+        category: "modest",
+
+        image: "/images/modest72.jpg",
+
+        images: [
+          "/images/modest-72-1.jpg"
+        ],
+         video: "/images/modest-72-vid.mp4",
+
+        description: "Trendy casual outfit",
+
+        price: 46000,
+
+        singlePrice: 0,
+
+        groupPrice: 46000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: [ "wine"]
+      },
+      
+      
+      {
+        name: "M174",
+
+        category: "modest",
+
+        image: "/images/modest77.jpg",
+
+        images: [
+          "/images/modest77-1.jpg"
+        ],
+        
+
+        description: "Trendy casual outfit",
+
+        price: 35000,
+
+        singlePrice: 0,
+
+        groupPrice: 35000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      
+      {
+        name: "M176",
+
+        category: "modest",
+
+        image: "/images/modest-78.jpg",
+
+        images: [
+          "/images/modest78-2.jpg"
+        ],
+         video: "/images/model78-vd.mp4",
+
+        description: "Trendy casual outfit",
+
+        price: 35000,
+
+        singlePrice: 0,
+
+        groupPrice: 35000,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      
+      
+      {
+        name: "M180",
+
+        category: "modest",
+
+        image: "/images/modest80.jpg",
+
+        images: [
+          "/images/modest80-1.jpg"
+        ],
+          video: "/images/modest80-vd.mp4",
+
+        description: "Trendy casual outfit",
+
+        price: 40500,
+
+        singlePrice: 0,
+
+        groupPrice: 40500,
+
+        purchaseType: "hybrid",
+
+        groupSize: 4,
+
+        isTrending: true,
+
+        tags: ["trendy", "young-fashion"],
+
+        sizes: ["S", "M", "L"],
+
+        colors: ["white", "Black"]
+      },
+      {
+        name: "M181",
+
+        category: "modest",
+
+        image: "/images/modest81.jpg",
+
+        images: [
+          "/images/modest81.jpg"
+        ],
+          video: "/images/modest81-vd.mp4",
 
         description: "Trendy casual outfit",
 

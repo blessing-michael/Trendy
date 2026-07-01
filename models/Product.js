@@ -11,6 +11,10 @@ const productSchema = new mongoose.Schema({
         type: [String],
         default: []
     },
+    video: {
+    type: String,
+    default: ""
+},
 
     description: { type: String },
 
@@ -44,7 +48,7 @@ const productSchema = new mongoose.Schema({
 
 category: {
     type: String,
-    enum: ["trendy", "classy", "modest"],
+    enum: ["trendy", "classy", "modest", "wedding"],
     default: "trendy"
 },
 

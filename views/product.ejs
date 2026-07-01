@@ -201,14 +201,45 @@
     <!-- LEFT SIDE -->
     <div class="gallery-section">
 
-        <div class="main-image-wrapper">
+        <!-- <div class="main-image-wrapper">
             <img
                 id="mainImage"
                 src="<%= product.images && product.images.length > 0 ? product.images[0] : product.image %>"
                 alt="<%= product.name %>"
                 class="main-image"
             >
-        </div>
+        </div> -->
+        <div class="main-image-wrapper">
+
+    <% if (product.video) { %>
+
+        <video
+            id="mainVideo"
+            class="main-video"
+            controls
+            playsinline
+            muted
+            preload="metadata"
+            poster="<%= product.image %>">
+
+            <source src="<%= product.video %>" type="video/mp4">
+
+            Your browser does not support video.
+
+        </video>
+
+    <% } else { %>
+
+        <img
+            id="mainImage"
+            src="<%= product.images && product.images.length > 0 ? product.images[0] : product.image %>"
+            alt="<%= product.name %>"
+            class="main-image"
+        >
+
+    <% } %>
+
+</div>
 
         <div class="thumbs">
             <% if(product.images && product.images.length > 0){ %>
@@ -621,6 +652,7 @@ const total = <%- JSON.stringify(product.groupSize || 1) %>;
 </script>
 
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const percent = total > 0 ? (joined / total) * 100 : 0;
@@ -630,27 +662,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const messages = [
         "🔥 Someone joined just now",
+        "👥 4 people are viewing this design",
+        "🛒 Someone added this to their cart 2 minutes ago",
         "🔥 Someone joined 1 min ago",
+         "🛒 Someone added this to their cart 5 minutes ago",
+         "👥 1 person is viewing this style",
         "🔥 Someone joined 2 mins ago",
+          "🛒 Someone added this to their cart  1 sec minutes ago",
+          "👥 5 people are browsing the Trendy collection",
+        "🔥 Someone joined 1 sec ago",
+        "🔥 Someone joined 5 secs ago",
+          "👥 2 people are browsing the Trendy collection",
+        "🔥 A group order about to be processed",
         "🔥 Someone joined 4 mins ago",
-        "🔥 Someone just secured their slot"
+          "👥 7 people are viewing the Classy collection",
+          "🛒 Someone added this to their cart 3 minutes ago",
+        "🔥 Someone joined 4 mins ago",
+         "🔥 A customer is viewing this item",
+           "🛒 Someone added this to their cart 5 sec ago",
+  "💖 Wedding collection is trending today",
+    "👥 5 people are browsing the Modesty collection",
+  "🛍️ A shopper recently added an item to their cart",
+  "⏳ Limited pieces available for some designs",
+        "🔥 Someone just secured their slot",
+         "✨ New shoppers are browsing the collection",
+  "💬 Customers are placing group orders",
+  "🔥 A group order is filling up",
+  "👥 Shoppers are joining group orders",
+   "👥 1 person is viewing this item",
+  "⏳ Don't miss the current group discount",
+  "🎉 A new group order has started",
+  "💰 Save more by joining a group purchase",
+   "👥 1 person is viewing this style",
+  "🎉 Join others shopping the latest collection"
     ];
 
-    let i = 0;
+   let lastIndex = -1;
 
-    setInterval(() => {
-        const el = document.getElementById("liveText");
-        if (!el) return;
+setInterval(() => {
 
-        el.style.opacity = 0;
+    const el = document.getElementById("liveText");
+    if (!el) return;
 
-        setTimeout(() => {
-            el.textContent = messages[i];
-            el.style.opacity = 1;
-            i = (i + 1) % messages.length;
-        }, 300);
+    el.style.opacity = 0;
 
-    }, 3000);
+    setTimeout(() => {
+
+        let randomIndex;
+
+        // Prevent the same message from showing twice in a row
+        do {
+            randomIndex = Math.floor(Math.random() * messages.length);
+        } while (randomIndex === lastIndex);
+
+        lastIndex = randomIndex;
+
+        el.textContent = messages[randomIndex];
+        el.style.opacity = 1;
+
+    }, 300);
+
+}, 3000);
 
 });
 

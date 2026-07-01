@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { image: "/images/td399.jpg", name: "Summer Set", price: "₦28,500" },
            {
     type: "video",
-    video: "/images/trend-vid2.mp4",
+    video: "/images/trend-vid2.MP4",
     name: "New Collection",
     price: "Watch Now"
   },
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { image: "/images/trend-7.jpg", name: "Casual Fit", price: "₦38,000" },
          {
     type: "video",
-    video: "/images/trend-vid4.mp4",
+    video: "/images/trend-vid4.MOV",
     name: "New Collection",
     price: "Watch Now"
   },
